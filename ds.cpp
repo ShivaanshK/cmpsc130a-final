@@ -8,6 +8,7 @@ RBFG::RBFG() {
 
 RBFG::~RBFG() {
     yeet(root);
+    // vectors are freed when they go out of scope
 }
 
 // helper, private function
@@ -43,16 +44,18 @@ Node* RBFG::find(std::string& name, Node* n) const {
 }
 
 // range-search
-std::vector<std::string> RBFG::findrange(std::string& name1, std::string& name2) const {
-    std::vector<std::string> namelist;
-    namelist.push_back(name1);
+std::vector<Node*> RBFG::findrange(std::string& name1, std::string& name2) const {
+    std::vector<Node*> nodelist;
+    nodelist.push_back(find(name1, root));
     Node* traverse = successor(name1);
+
     while (traverse->name != name2) {
-        namelist.push_back(traverse->name);
+        nodelist.push_back(traverse);
         traverse = successor(traverse->name);
     }
-    namelist.push_back(name2);
-    return namelist;
+
+    nodelist.push_back(find(name2, root));
+    return nodelist;
 }
 
 // helper, private function
@@ -141,11 +144,13 @@ bool RBFG::insert(std::string& name, i graph_index, i file_index, Node* n) {
 
 // functions for rb-tree & f-graph
 // print name and occupation given range of names
-void RBFG::print_range(std::string& name1, std::string& name2) const {
-    std::vector<std::string> namelist = findrange(name1, name2);
-    for (auto& name : namelist) {
-        // stub. implement filedata
-        std::cout << name << std::endl;
+void RBFG::range_query(std::string& name1, std::string& name2) const {
+    std::vector<Node*> nodelist = findrange(name1, name2);
+    std::string occupation;
+    for (auto& person : nodelist) {
+        // stub. read from file, the occupation. the index
+        occupation = ""; // should be something like find(name1, root)->file_index
+        std::cout << person->name << occupation << std::endl;
     }
     return;
 }
@@ -156,3 +161,13 @@ void RBFG::print_all() const {
     return;
 }
 
+// functions for f-graph
+// add edge on the friendship graph
+// assume all people are on rb-tree
+void RBFG::add_edge(adjlist alist, std::string& name1, std::string& name2) {
+    i file_index1 = find(name1, root)->file_index;
+    i file_index2 = find(name2, root)->file_index;
+    alist[].push_back(); // put file index 
+    alist[fi_2].push_back(fi_1);
+    return;
+}
