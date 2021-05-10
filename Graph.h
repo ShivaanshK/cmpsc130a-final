@@ -17,10 +17,11 @@ public:
         int counter = 0;
         for (int i = 0; i < s.length(); i++)
         {
-            if (s[i] == ',' || (i == s.length()-1))
+            if (s[i] == ',' || (i == s.length() - 1))
             {
-                if(i == s.length()-1){
-                    word+=s[i];
+                if (i == s.length() - 1)
+                {
+                    word += s[i];
                 }
                 if (counter == 0)
                     name = word;
@@ -29,7 +30,7 @@ public:
                 else if (counter == 2)
                     occupation = word;
                 else
-                friends.push_back(word);
+                    friends.push_back(word);
                 counter++;
                 word = "";
             }
@@ -49,13 +50,12 @@ public:
             {
                 Node *node = new Node();
                 node->name = friends[i];
-                cout << friends[i] << endl;
                 graph[graph.size() - 1].list = node;
                 tail = node;
             }
             else
             {
-                Node *node= new Node();
+                Node *node = new Node();
                 node->name = friends[i];
                 tail->next = node;
                 tail = node;
@@ -79,7 +79,57 @@ public:
             cout << endl;
             cout << endl;
         }
-        cout << endl;
+    }
+
+    void insertUser(string user)
+    {
+        Graphnode temp;
+        temp.name = user;
+        graph.push_back(temp);
+    }
+
+    void insertFriendship(string p1, string p2)
+    {
+        for (int i = 0; i < graph.size(); i++)
+        {
+            if (graph[i].name == p1)
+            {
+
+                Node *temp = graph[i].list;
+                if (temp == NULL)
+                {
+                    Node *node = new Node();
+                    node->name = p2;
+                    graph[i].list = node;
+                }
+                else
+                {
+                    while (temp->next != NULL)
+                        temp = temp->next;
+                    Node *node = new Node();
+                    node->name = p2;
+                    temp->next = node;
+                }
+            }
+            else if (graph[i].name == p2)
+            {
+                Node *temp = graph[i].list;
+                if (temp == NULL)
+                {
+                    Node *node = new Node();
+                    node->name = p1;
+                    graph[i].list = node;
+                }
+                else
+                {
+                    while (temp->next != NULL)
+                        temp = temp->next;
+                    Node *node = new Node();
+                    node->name = p1;
+                    temp->next = node;
+                }
+            }
+        }
     }
 
 private:

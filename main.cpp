@@ -13,10 +13,15 @@ int main(int argc, char *argv[])
     int counter = 0;
     while (getline(infile, line,'\n'))
     {
-        graph.insert(line);
+        if(line != "") graph.insert(line);
         line = "";
     } 
     infile.close();
+
+    graph.printGraph();
+
+    graph.insertUser("Shaunak");
+    graph.insertFriendship("Shiv","Shaunak");
 
     graph.printGraph();
 
