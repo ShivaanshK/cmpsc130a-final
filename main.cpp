@@ -13,17 +13,18 @@ int main(int argc, char *argv[])
     int counter = 0;
     while (getline(infile, line,'\n'))
     {
-        if(line != "") graph.insert(line);
+        if(line != "" && counter != 0) graph.insert(line);
         line = "";
+        counter ++;
     } 
     infile.close();
 
     graph.printGraph();
 
-    graph.insertUser("Shaunak");
-    graph.insertFriendship("Shiv","Shaunak");
+    // graph.insertUser("Shaunak");
+    // graph.insertFriendship("Shiv","Shaunak");
 
-    graph.printGraph();
+    // graph.printGraph();
 
     return 1;
 }

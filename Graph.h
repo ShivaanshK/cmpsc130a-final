@@ -21,7 +21,8 @@ public:
             {
                 if (i == s.length() - 1)
                 {
-                    word += s[i];
+                    if (s[i] != '"')
+                        word += s[i];
                 }
                 if (counter == 0)
                     name = word;
@@ -36,7 +37,10 @@ public:
             }
             else
             {
-                word += s[i];
+                if (s[i] != '"')
+                {
+                    word += s[i];
+                }
             }
         }
 
