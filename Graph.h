@@ -30,14 +30,14 @@ public:
                     age = word;
                 else if (counter == 2)
                     occupation = word;
-                else
+                else if(word != "")
                     friends.push_back(word);
                 counter++;
                 word = "";
             }
             else
             {
-                if (s[i] != '"')
+                if (s[i] != '"' && s[i] != ',')
                 {
                     word += s[i];
                 }
