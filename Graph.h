@@ -2,12 +2,14 @@
 #define GRAPH_H
 #include <string>
 #include <vector>
+#include <fstream>
 #include "Graphnode.h"
 using namespace std;
 
 class Graph
 {
 public:
+    int c = 1;
     Graph(){};
     void insert(string s)
     {
@@ -30,7 +32,7 @@ public:
                     age = word;
                 else if (counter == 2)
                     occupation = word;
-                else if(word != "")
+                else if (word != "")
                     friends.push_back(word);
                 counter++;
                 word = "";
@@ -43,9 +45,10 @@ public:
                 }
             }
         }
-
+        int fileIndex = addToFile(name, age, occupation);
         Graphnode temp;
         temp.name = name;
+        temp.filePointer = fileIndex;
         graph.push_back(temp);
         Node *tail;
         for (int i = 0; i < friends.size(); i++)
@@ -67,13 +70,77 @@ public:
         }
     }
 
+    int addToFile(string name, string age, string occupation)
+    {
+        ofstream output("directory.txt", ios::app);
+        output << setfill(' ') << left << setw(20) << name << setw(3) << age << setw(30) << occupation;
+        output.close();
+        return c++;
+    }
+
+    string* readFile(int filePointer)
+    {
+        char *name = new char[20];
+        char *age = new char[3];
+        char *occupation = new char[30];
+        ifstream input("directory.txt", ios::binary);
+        input.seekg(filePointer * 53, ios::beg);
+        input.read(name, 20);
+        input.read(age, 3);
+        input.read(occupation, 30);
+        input.close();
+        input.clear();
+        string n(""), a(""), o("");
+        int k = 0;
+        for (int i = 0; i < 20; i++)
+        {
+            if (name[i] == ' ')
+                k++;
+            else
+                k = 0;
+            if (k == 2)
+            {
+                n = n.substr(0, n.length() - 1);
+                break;
+            }
+            n += name[i];
+        }
+        for (int i = 0; i < 3; i++)
+        {
+            if (age[i] == ' ')
+            {
+                break;
+            }
+            a += age[i];
+        }
+        k = 0;
+        for (int i = 0; i < 30; i++)
+        {
+            if (occupation[i] == ' ')
+                k++;
+            else
+                k = 0;
+            if (k == 2)
+            {
+                o = o.substr(0, o.length() - 1);
+                break;
+            }
+            o += occupation[i];
+        }
+        string* arr = new string[3];
+        arr[0] = n;
+        arr[1] = a;
+        arr[2] = o;
+        return arr;
+    }
+
     void printGraph()
     {
         Node *temp;
         cout << "Graph:" << endl;
         for (int i = 0; i < graph.size(); i++)
         {
-            cout << i << ": " << graph[i].name;
+            cout << graph[i].filePointer << ": " << graph[i].name;
             temp = graph[i].list;
             while (temp != NULL)
             {

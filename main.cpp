@@ -18,12 +18,10 @@ int main(int argc, char *argv[])
         counter ++;
     } 
     infile.close();
+    infile.clear();
 
-    graph.printGraph();
-
-    // graph.insertUser("Shaunak");
-    // graph.insertFriendship("Shiv","Shaunak");
-
+    string* output = graph.readFile(0);
+    cout << *(output) << ", " + *(output + 1) << ", " + *(output + 2) << endl; 
     // graph.printGraph();
 
     return 1;
