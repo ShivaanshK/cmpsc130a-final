@@ -160,14 +160,3 @@ void RBFG::print_all() const {
     std::cout << "print everything stub" << std::endl;
     return;
 }
-
-// functions for f-graph
-// add edge on the friendship graph
-// assume all people are on rb-tree
-void RBFG::add_edge(adjlist alist, std::string& name1, std::string& name2) {
-    i file_index1 = find(name1, root)->file_index;
-    i file_index2 = find(name2, root)->file_index;
-    alist[].push_back(); // put file index 
-    alist[fi_2].push_back(fi_1);
-    return;
-}
