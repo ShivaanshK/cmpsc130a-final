@@ -53,11 +53,11 @@ Node* RBFG::find(std::string& name, Node* n) const {
 std::vector<Node*> RBFG::findrange(std::string& name1, std::string& name2) const {
     std::vector<Node*> nodelist;
     nodelist.push_back(find(name1, root->right));
-    traverse = successor(name1);
+    Node* current = successor(name1);
 
-    while (traverse->name != name2) {
-        nodelist.push_back(traverse);
-        traverse = successor(traverse->name);
+    while (current->name != name2) {
+        nodelist.push_back(current);
+        current = successor(current->name);
     }
 
     nodelist.push_back(find(name2, root->right));
@@ -66,13 +66,13 @@ std::vector<Node*> RBFG::findrange(std::string& name1, std::string& name2) const
 
 // helper, private function
 Node* RBFG::successor(std::string& name) const {
-    traverse = find(name, root->right);
-    if (traverse) {
+    Node* current = find(name, root->right);
+    if (current) {
         // if this node has a right subtree
-        if (traverse->right) {
-            traverse = traverse->right;
-            while (traverse->left != nullnode) {
-                traverse = traverse->left;
+        if (current->right) {
+            current = current->right;
+            while (current->left != nullnode) {
+                current = current->left;
             }
         }
         // if this node has no right subtree, 
@@ -85,18 +85,18 @@ Node* RBFG::successor(std::string& name) const {
                     lastleft = lastleft->right;
                 }
                 else {
-                    traverse = lastleft;
+                    current = lastleft;
                     lastleft = lastleft->left;
                 }
             }
         }
         // if the last left node passed is this node
         // this node has no successor
-        if (traverse->name == name) {
+        if (current->name == name) {
             return nullnode;
         }
         else {
-            return traverse;
+            return current;
         }
     }
     else {
@@ -139,11 +139,11 @@ void RBFG::insert(std::string& name) {
    }
    else {
        traverse = new Node{name, elements++, nullnode, nullnode};
-       if (name < parent->name) {
-           parent->left = traverse;
+       if (name < pt->name) {
+           pt->left = traverse;
        }
        else {
-           parent->right = traverse;
+           pt->right = traverse;
        }
        fix(name); // fix RB-tree
    }
@@ -235,7 +235,7 @@ void RBFG::range_query(std::string& name1, std::string& name2) const {
 }
 
 // print all information for all users
-void RBFG::print_all() const {
+void RBFG::print_all(Node* n) const {
     std::cout << "print everything stub" << std::endl;
     return;
 }

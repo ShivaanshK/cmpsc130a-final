@@ -8,16 +8,18 @@
 #include <vector>
 
 typedef uint32_t i; // indices are never negative
+const static bool red = true;
+const static bool black = false;
 
 struct Node {
-    Node(const std::string& n = std::string{}, i gi = 0, Node* l = nullptr, Node* r = nullptr, int c = black)
+    Node(const std::string& n = std::string{}, i gi = 0, Node* l = nullptr, Node* r = nullptr, bool c = black)
         : name{n}, graph_index{gi}, left{l}, right(r), color{c} {}
     
     std::string name;
     i graph_index;
     Node* left;
     Node* right;
-    int color;
+    bool color;
 };
 
 // Top-Down Red-Black Tree
@@ -25,9 +27,6 @@ class RBFG {
     public:
         RBFG();
         ~RBFG();
-        
-        const static int red = 0;
-        const static int black = 1;
 
         // functions for rb-tree
         Node* find(std::string& name, Node* n) const;
@@ -43,18 +42,22 @@ class RBFG {
 
         // rb-tree
         Node* root; // sentinel root node
+        Node* nullnode; // sentinel null node
+        
+        // nodes used in insert and its subroutines
         Node* traverse;
         Node* pt;
         Node* gpt;
         Node* ggpt;
-        Node* nullnode; // sentinel null node
 
         // helpers for rb-tree
         void yeet(Node* n); // recursive destructor helper
-        void fix(std::string& name);
+
+        void fix(std::string& name); // insert helper
         Node* rotate(std::string& name, Node* this_pt); // fix helper
-        void lrotate(Node*& n);
-        void rrotate(Node*& n);
+        void lrotate(Node*& n); // rotate helper
+        void rrotate(Node*& n); // rotate helper
+
         Node* successor(std::string& name) const; // findrange helper
 };
 
