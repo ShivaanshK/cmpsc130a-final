@@ -10,19 +10,17 @@
 typedef uint32_t i; // indices are never negative
 
 struct Node {
-    Node(const std::string& n = std::string{}, i gi = 0, i fi = 0, Node* p = nullptr, Node* l = nullptr, Node* r = nullptr, int c = black)
-        : name{n}, graph_index{gi}, file_index{fi}, parent{p}, left{l}, right(r), color{c} {}
+    Node(const std::string& n = std::string{}, i gi = 0, Node* l = nullptr, Node* r = nullptr, int c = black)
+        : name{n}, graph_index{gi}, left{l}, right(r), color{c} {}
     
     std::string name;
     i graph_index;
-    i file_index;
-    Node* parent;
     Node* left;
     Node* right;
     int color;
 };
 
-// Red-Black Tree and Friendship Graph
+// Top-Down Red-Black Tree
 class RBFG {
     public:
         RBFG();
@@ -34,23 +32,30 @@ class RBFG {
         // functions for rb-tree
         Node* find(std::string& name, Node* n) const;
         std::vector<Node*> findrange(std::string& name1, std::string& name2) const;
-        bool insert(std::string& name, i graph_index, i file_index);
-        
+        void insert(std::string& name);
+
         // functions for rb-tree & f-graph
         void range_query(std::string& name1, std::string& name2) const;
-        void print_all() const;
+        void print_all(Node* n) const;
     
     private:
+        i elements; // number of nodes
+
         // rb-tree
-        Node* root; // implemented with linked lists
+        Node* root; // sentinel root node
+        Node* traverse;
+        Node* pt;
+        Node* gpt;
+        Node* ggpt;
+        Node* nullnode; // sentinel null node
 
         // helpers for rb-tree
         void yeet(Node* n); // recursive destructor helper
-        bool insert(std::string& name, i graph_index, i file_index, Node* n); // recursive insert helper
-        void rotate_left();
-        void rotate_right();
+        void fix(std::string& name);
+        Node* rotate(std::string& name, Node* this_pt); // fix helper
+        void lrotate(Node*& n);
+        void rrotate(Node*& n);
         Node* successor(std::string& name) const; // findrange helper
-        
 };
 
 #endif

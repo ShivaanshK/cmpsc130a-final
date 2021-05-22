@@ -3,7 +3,13 @@
 #include "ds.h"
 
 RBFG::RBFG() {
-    root = nullptr;
+    nullnode = new Node;
+    nullnode->left = nullnode;
+    nullnode->right = nullnode;
+    root = new Node{"sentinel, right child is root"};
+    root->left = nullnode;
+    root->right = nullnode;
+    elements = 0;
 }
 
 RBFG::~RBFG() {
@@ -39,33 +45,33 @@ Node* RBFG::find(std::string& name, Node* n) const {
         }
     }
     else {
-        return nullptr;
+        return nullnode;
     }
 }
 
 // range-search
 std::vector<Node*> RBFG::findrange(std::string& name1, std::string& name2) const {
     std::vector<Node*> nodelist;
-    nodelist.push_back(find(name1, root));
-    Node* traverse = successor(name1);
+    nodelist.push_back(find(name1, root->right));
+    traverse = successor(name1);
 
     while (traverse->name != name2) {
         nodelist.push_back(traverse);
         traverse = successor(traverse->name);
     }
 
-    nodelist.push_back(find(name2, root));
+    nodelist.push_back(find(name2, root->right));
     return nodelist;
 }
 
 // helper, private function
 Node* RBFG::successor(std::string& name) const {
-    Node* traverse = find(name, root);
+    traverse = find(name, root->right);
     if (traverse) {
         // if this node has a right subtree
         if (traverse->right) {
             traverse = traverse->right;
-            while (traverse->left != nullptr) {
+            while (traverse->left != nullnode) {
                 traverse = traverse->left;
             }
         }
@@ -73,7 +79,7 @@ Node* RBFG::successor(std::string& name) const {
         // starting from root to that node, the last left node
         // passed before arriving at the node is the successor
         else {
-            Node* lastleft = root;
+            Node* lastleft = root->right;
             while (lastleft->name != name) {
                 if (lastleft->name < name) {
                     lastleft = lastleft->right;
@@ -87,7 +93,7 @@ Node* RBFG::successor(std::string& name) const {
         // if the last left node passed is this node
         // this node has no successor
         if (traverse->name == name) {
-            return nullptr;
+            return nullnode;
         }
         else {
             return traverse;
@@ -96,50 +102,123 @@ Node* RBFG::successor(std::string& name) const {
     else {
         // root was nullptr OR
         // name is not in rb-tree
-        return nullptr;
+        return nullnode;
     }
 }
 
 // insert
-bool RBFG::insert(std::string& name, i graph_index, i file_index) {
-    if (root) {
-        return insert(name, graph_index, file_index, root);
+void RBFG::insert(std::string& name) {
+   traverse = root;
+   pt = root; 
+   gpt = root;
+   nullnode->name = name;
+
+   while(traverse->name != name) {
+       ggpt = gpt;
+       gpt = pt;
+       pt = traverse;
+       if (name < traverse->name) {
+           traverse = traverse->left;
+       }
+       else {
+           traverse = traverse->right;
+       }
+        
+       // if the current node has two red children
+       // swap colours / do rotations
+       if ((traverse->left->color == red) && (traverse->left->color == red)) {
+           fix(name);
+       }
+   }
+
+   // this RB-tree assumes all elements are unique
+   // if the newly-inserted name is not at the leaf
+   // it was not unique, and this function is done
+   if (traverse != nullnode) {
+       return;
+   }
+   else {
+       traverse = new Node{name, elements++, nullnode, nullnode};
+       if (name < parent->name) {
+           parent->left = traverse;
+       }
+       else {
+           parent->right = traverse;
+       }
+       fix(name); // fix RB-tree
+   }
+
+}
+
+// helper, private function
+// during insert(), if node has two red children, fix() is called
+void RBFG::fix(std::string& name) {
+    // the 'traverse' node below points to the 
+    // node that is being inserted (as fix is
+    // called within the insert function)
+    traverse->color = red;
+    traverse->left->color = black;
+    traverse->right->color = black;
+    
+    // the uncle is always black thanks to top-down implementation
+    // thus, if the parent of traverse is red, there will be two rotations
+    if (pt->color == red) {
+        gpt->color = red;
+        if ((name < gpt->name) != (name < pt->name)) {
+            pt = rotate(name, gpt);
+        }
+        traverse = rotate(name, ggpt);
+        traverse->color = black;
+    }
+    
+    // for this implementation, the 
+    // real root is root->right
+    // the real root needs to become black
+    root->right->color = black;
+}
+
+// helper, private function
+// called by fix(), which is a subroutine of insert()
+// this_pt is the parent of the subtree being rotated
+Node* RBFG::rotate(std::string& name, Node* this_pt) {
+    if (name < this_pt->name) {
+        if (name < this_pt->left->name) {
+            // LL case
+            rrotate(this_pt->left);
+        }
+        else {
+            // LR case
+            lrotate(this_pt->left);
+        }
+        return this_pt->left;
     }
     else {
-        root = new Node(name, graph_index, file_index);
-        return true;
+        if (name < this_pt->right->name) {
+            // RL case
+            rrotate(this_pt->right);
+        }
+        else {
+            // RR case
+            lrotate(this_pt->left);
+        }
+        return this_pt->right;
     }
 }
 
 // helper, private function
-bool RBFG::insert(std::string& name, i graph_index, i file_index, Node* n) {
-    if (n->name == name) {
-        return false;
-    }
-    else {
-        if (n->name < name) {
-            if (n->right) {
-                return insert(name, graph_index, file_index, n->right);
-            }
-            else {
-                n->right = new Node(name, graph_index, file_index);
-                n->right->parent = n;
-                return true;
-            }
-        }
-        // already known that n->name != name
-        // checks n->name > name
-        else { 
-            if (n->left) {
-                return insert(name, graph_index, file_index, n->left);
-            }
-            else {
-                n->left = new Node(name, graph_index, file_index);
-                n->left->parent = n;
-                return true;
-            }
-        }
-    }
+void RBFG::lrotate(Node*& n) { // rotate left
+    pt = n->right;
+    n->right = pt->left;
+    pt->left = n;
+    n = pt;
+}
+
+// helper, private function
+void RBFG::rrotate(Node*& n) { // rotate right
+    pt = n->left;
+    n->left = pt->right;
+    pt->right = n;
+    n = pt;
 }
 
 // functions for rb-tree & f-graph
