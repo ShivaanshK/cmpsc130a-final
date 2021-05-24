@@ -207,7 +207,7 @@ void RBT::fix(Node*& r, Node*& entry) {
         
         // if entry's parent is left child of entry's grandparent
         if (pt_entry == gpt_entry->left) {
-            Node* uc_entry = gpt_entry->right; // uncle is grandparent's other child 
+            uc_entry = gpt_entry->right; // uncle is grandparent's other child 
             if (uc_entry && uc_entry->color == red) { // uncle exists and is also red
                 pt_entry->color = black; // recolour parent and uncle
                 uc_entry->color = black;
@@ -217,19 +217,19 @@ void RBT::fix(Node*& r, Node*& entry) {
             else { // uncle doesn't exist OR uncle is black
                 // LR case (rotate left and make it a LL case)
                 if (entry == pt_entry->right) {
-                    lrotate(r, pt_entry);
+                    lrotate(r, pt_entry); // rotate with pivot at the entry's parent
                     entry = pt_entry;
                     pt_entry = entry->parent;
                 }
                 // LL case (rotate right)
-                rrotate(r, gpt_entry);
+                rrotate(r, gpt_entry); // rotate with pivot at the entry's grandparent
                 std::swap(pt_entry->color, gpt_entry->color);
-                entry = pt_entry;
+                entry = pt_entry; // check entry's parent
             }
         }
         // if entry's parent is right child of entry's grandparent
         else if (pt_entry == gpt_entry->right) {
-            Node* uc_entry = gpt_entry->left; // uncle is grandparent's other child
+            uc_entry = gpt_entry->left; // uncle is grandparent's other child
             if (uc_entry && uc_entry->color == red) { // uncle exists and is also red
                 pt_entry->color = black; // recolour parent and uncle
                 uc_entry->color = black;
@@ -239,14 +239,14 @@ void RBT::fix(Node*& r, Node*& entry) {
             else { // uncle doesn't exist OR uncle is black
                // RL case (rotate right and make it a RR case)
                 if (entry == pt_entry->left) {
-                    rrotate(r, pt_entry);
+                    rrotate(r, pt_entry); // rotate with pivot at the entry's parent
                     entry = pt_entry;
                     pt_entry = entry->parent;
                 }
                 // RR case (rotate left)
-                lrotate(r, gpt_entry);
+                lrotate(r, gpt_entry); // rotate with pivot at the entry's grandparent
                 std::swap(pt_entry->color, gpt_entry->color);
-                entry = pt_entry;
+                entry = pt_entry; // check entry's parent
             }
         }
     }

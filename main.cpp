@@ -20,7 +20,7 @@ int main() {
     }
     infile.close();
 
-    std::cout << "Printing names in order" << std::endl;
+    std::cout << "Printing all names in ascending order" << std::endl;
     rb.print_all();
 
     std::cout << "Printing from amr to rashid" << std::endl;
