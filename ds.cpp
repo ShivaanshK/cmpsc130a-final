@@ -170,15 +170,15 @@ void RBT::insert(const std::string& name) {
 
 /* CALLED BY INSERT: PERFORMS BST INSERT */
 Node* RBT::binsert(Node* r, Node* entry) {
-    if (!r) {
+    if (!r) { // base case, insert new entry
         return entry; // root was empty, so set new entry as root
     }
 
-    if (entry->name < r->name) {
+    if (entry->name < r->name) { // traverse left
         r->left = binsert(r->left, entry);
         r->left->parent = r; // connect new left child with parent
     }
-    else if (entry->name > r->name) {
+    else if (entry->name > r->name) { // traverse right
         r->right = binsert(r->right, entry);
         r->right->parent = r; // connect new right child with parent
     }
@@ -212,7 +212,7 @@ void RBT::fix(Node*& r, Node*& entry) {
                 pt_entry->color = black; // recolour parent and uncle
                 uc_entry->color = black;
                 gpt_entry->color = red; // recolour their parent (entry's grandparent)
-                entry = gpt_entry; // check entry's grandparent
+                entry = gpt_entry; // check entry's grandparent for next loop
             }
             else { // uncle doesn't exist OR uncle is black
                 // LR case (rotate left and make it a LL case)
@@ -224,7 +224,7 @@ void RBT::fix(Node*& r, Node*& entry) {
                 // LL case (rotate right)
                 rrotate(r, gpt_entry); // rotate with pivot at the entry's grandparent
                 std::swap(pt_entry->color, gpt_entry->color);
-                entry = pt_entry; // check entry's parent
+                entry = pt_entry; // check entry's parent for next loop
             }
         }
         // if entry's parent is right child of entry's grandparent
@@ -234,7 +234,7 @@ void RBT::fix(Node*& r, Node*& entry) {
                 pt_entry->color = black; // recolour parent and uncle
                 uc_entry->color = black;
                 gpt_entry->color = red; // recolour their parent (entry's grandparent)
-                entry = gpt_entry; // check entry's grandparent
+                entry = gpt_entry; // check entry's grandparent for next loop
             }
             else { // uncle doesn't exist OR uncle is black
                // RL case (rotate right and make it a RR case)
@@ -246,7 +246,7 @@ void RBT::fix(Node*& r, Node*& entry) {
                 // RR case (rotate left)
                 lrotate(r, gpt_entry); // rotate with pivot at the entry's grandparent
                 std::swap(pt_entry->color, gpt_entry->color);
-                entry = pt_entry; // check entry's parent
+                entry = pt_entry; // check entry's parent for next loop
             }
         }
     }
