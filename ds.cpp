@@ -193,64 +193,78 @@ void RBT::fix(Node*& r, Node*& entry) {
     Node* uc_entry = nullptr; // entry's uncle
     Node* gpt_entry = nullptr; // entry's grandparent
     
-    // fix() does nothing if:
-        // 1. the entry is the root (fix only recolours the root black)
-        // 2. the entry is already black
-        // 3. the entry's parent is already black
-
-    // thus the following loop runs while none of the above is true, i.e.
-    // while entry is not root, entry is red, and entry's parent is red
+    // the following loop runs until:
+    // 1. entry is root
+    // 2. entry is black OR
+    // 3. entry's parent is black
+    // i.e.
+    // the following loop runs while:
+    // 1. entry is not root
+    // 2. entry is red AND
+    // 3. entry's parent is red
     // entry != r must be checked first, since checking root's parent will segfault
     while ((entry != r) && (entry->color == red) && (entry->parent->color == red)) {
-        pt_entry = entry->parent;
-        gpt_entry = entry->parent->parent;
-        
-        // if entry's parent is left child of entry's grandparent
+        // every loop assumes the entry has a parent and a grandparent
+        pt_entry = entry->parent; // parent can be root
+        gpt_entry = entry->parent->parent; // gparent can be nullptr
+
+        // find entry's uncle
         if (pt_entry == gpt_entry->left) {
-            uc_entry = gpt_entry->right; // uncle is grandparent's other child 
-            if (uc_entry && uc_entry->color == red) { // uncle exists and is also red
-                pt_entry->color = black; // recolour parent and uncle
-                uc_entry->color = black;
-                gpt_entry->color = red; // recolour their parent (entry's grandparent)
-                entry = gpt_entry; // check entry's grandparent for next loop
-            }
-            else { // uncle doesn't exist OR uncle is black
-                // LR case (rotate left and make it a LL case)
-                if (entry == pt_entry->right) {
-                    lrotate(r, pt_entry); // rotate with pivot at the entry's parent
-                    entry = pt_entry;
-                    pt_entry = entry->parent;
-                }
-                // LL case (rotate right)
-                rrotate(r, gpt_entry); // rotate with pivot at the entry's grandparent
-                std::swap(pt_entry->color, gpt_entry->color);
-                entry = pt_entry; // check entry's parent for next loop
-            }
+            uc_entry = gpt_entry->right;
         }
-        // if entry's parent is right child of entry's grandparent
-        else if (pt_entry == gpt_entry->right) {
-            uc_entry = gpt_entry->left; // uncle is grandparent's other child
-            if (uc_entry && uc_entry->color == red) { // uncle exists and is also red
-                pt_entry->color = black; // recolour parent and uncle
-                uc_entry->color = black;
-                gpt_entry->color = red; // recolour their parent (entry's grandparent)
-                entry = gpt_entry; // check entry's grandparent for next loop
+        else {
+            uc_entry = gpt_entry->left;
+        } // uncle can be nullptr
+
+        // if uncle exists (then gparent exists)
+        // and if uncle is red then 
+        // (because parent is also red,
+        // and by RBT invariant gparent is black)
+        // switch parent/uncle and gparent colour
+        if (uc_entry && uc_entry->color == red) {
+            pt_entry->color = black;
+            uc_entry->color = black;
+            gpt_entry->color = red;
+            entry = gpt_entry;
+        }
+        // uncle doesn't exist OR uncle is black
+        else {
+            // entry's parent is entry's grandparent's left child
+            // entry is either LL or LR
+            // LR degenerates to an LL case, so the following
+            // if statement checks if it is LR, then does the LL case
+            if (pt_entry == gpt_entry->left) {
+                if (entry == pt_entry->right) {
+                    // rotate left with pivot = parent
+                    lrotate(r, pt_entry);
+                    entry = pt_entry; // hi, im not sure why i needed this
+                                      // but without it this DS has segfaults
+                    pt_entry = entry->parent;
+                }
+                // rotate right with pivot = grandparent
+                rrotate(r,gpt_entry);
             }
-            else { // uncle doesn't exist OR uncle is black
-               // RL case (rotate right and make it a RR case)
+            // entry's parent is entry's grandparent's right child
+            // entry is either RL or RR
+            // RL degenerates to an RR case, so the following
+            // if statement checks if it is RL, then does the RR case
+            else if (pt_entry == gpt_entry->right) {
                 if (entry == pt_entry->left) {
-                    rrotate(r, pt_entry); // rotate with pivot at the entry's parent
+                    // rotate right with pivot = parent
+                    rrotate(r, pt_entry);
                     entry = pt_entry;
                     pt_entry = entry->parent;
                 }
-                // RR case (rotate left)
-                lrotate(r, gpt_entry); // rotate with pivot at the entry's grandparent
-                std::swap(pt_entry->color, gpt_entry->color);
-                entry = pt_entry; // check entry's parent for next loop
+                // rotate left with pivot = grandparent
+                lrotate(r,gpt_entry);
             }
+            // swapping parent and grandparent colours is always done
+            std::swap(pt_entry->color, gpt_entry->color);
+            // check the entry's parent for the next loop
+            entry = pt_entry;
         }
     }
-    
+           
     r->color = black; // set root to black if it isn't already
     return;
 }
