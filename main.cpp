@@ -1,21 +1,40 @@
 #include "ds.h"
-
-void insert_disk();
+#include <fstream>
+#include <sstream>
 
 int main() {
-    std::string input;
-    while(1) {
-        std::cout << "welcomeeeeee" << std::endl;
-        std::cout << "Insert Name Age \"Profession\"" << std::endl;
-        std::cout << "AddFriend Name Friend" << std::endl;
-        std::cin >> input;
-
-        if (input.substr(0,6) == "Insert") {
-            std::cout << "inserted!" << std::endl;
-        }
-        else if (input.substr(0,10) == "AddFriend") {
-            std::cout << "friend added!" << std::endl;
+    RBT rb;
+    std::string line;
+    std::ifstream infile("bruh.txt");
+    while (getline(infile, line)) {
+        std::istringstream current_line(line);
+        while (current_line) {
+            std::string name;
+            if (getline(current_line, name, ',')) {
+                rb.insert(name);
+            }
+            else {
+                break;
+            }
         }
     }
+    infile.close();
+
+    std::cout << "Printing names in order" << std::endl;
+    rb.print_all();
+
+    std::cout << "Printing from amr to rashid" << std::endl;
+    std::string a = "amr";
+    std::string b = "rashid";
+    rb.range_query(a,b);
+
+    std::cout << "Printing just amr" << std::endl;
+    rb.exact_query(a);
+
+    std::cout << "Printing just hamud" << std::endl;
+    std::string c = "hamud";
+    rb.exact_query(c);
+
     return 0;
+
 }
