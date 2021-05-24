@@ -9,7 +9,7 @@ using namespace std;
 class Graph
 {
 public:
-    int c = 1;
+    int c = 0;
     Graph(){};
     void insert(string s)
     {
@@ -80,16 +80,19 @@ public:
 
     string* readFile(int filePointer)
     {
-        char *name = new char[20];
-        char *age = new char[3];
-        char *occupation = new char[30];
+        char *na = new char[20];
+        char *ag = new char[3];
+        char *occ = new char[30];
         ifstream input("directory.txt", ios::binary);
         input.seekg(filePointer * 53, ios::beg);
-        input.read(name, 20);
-        input.read(age, 3);
-        input.read(occupation, 30);
+        input.read(na, 20);
+        input.read(ag, 3);
+        input.read(occ, 30);
         input.close();
         input.clear();
+        string name(na);
+        string age(ag);
+        string occupation(occ);
         string n(""), a(""), o("");
         int k = 0;
         for (int i = 0; i < 20; i++)
