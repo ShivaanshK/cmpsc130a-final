@@ -8,8 +8,8 @@
 #include <utility> // for std::swap in fix()
 
 typedef uint32_t i; // indices are never negative
-const static bool red = false;
-const static bool black = true;
+const static bool red = true;
+const static bool black = false;
 
 /* IMPLEMENTATION OF RED-BLACK NODE */
 class Node {
