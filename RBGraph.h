@@ -17,14 +17,14 @@ class RB_Node {
     public:
         std::string name;
         bool color;
-        i graph_index;
+        i filePointer;
         RB_Node* left;
         RB_Node* right;
         RB_Node* parent;
 
         // constructor 
-        RB_Node(std::string n = std::string{}, bool c = red, i gi = 0, RB_Node* l = nullptr, RB_Node* r = nullptr, RB_Node* p = nullptr)
-            : name{n}, color{c}, graph_index{gi}, left{l}, right{r}, parent{p} {}
+        RB_Node(std::string n = std::string{}, bool c = red, i fp = 0, RB_Node* l = nullptr, RB_Node* r = nullptr, RB_Node* p = nullptr)
+            : name{n}, color{c}, filePointer{fp}, left{l}, right{r}, parent{p} {}
         
         // by default nodes are red; this is okay, because the 'null' nodes are considered black
 };
@@ -58,16 +58,16 @@ class RBGraph{
         void print_all() const;
 
         // manipulate graph
-        void insert_user(const std::string& user) const;
-        void insert_friendship(const std::string& p1, const std::string& p2) const;
+        void insert_user(const std::string& user);
+        void insert_friendship(const std::string& p1, const std::string& p2);
         void print_Graph() const;
 
         //read/write to file
         void write_to_file(const std::string& name, const std::string& age, const std::string& occupation) const;
-        std::vector<std::string> read_file(const int filePointer) const;
+        std::vector<std::string> read_file(const int& filePointer);
         
         // insert
-        void insert(const std::string& s) const;
+        void insert(const std::string& s);
     private:
         RB_Node* root; // RBT
         std::vector<Graphnode> graph; // Graph

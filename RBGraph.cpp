@@ -13,7 +13,7 @@ RBGraph::~RBGraph()
         clear(root);
 }
 
-void RBGraph::insert(const std::string &s) const
+void RBGraph::insert(const std::string &s)
 {
     std::string word("");
     std::string name, age, occupation;
@@ -88,7 +88,7 @@ void RBGraph::write_to_file(const std::string &name, const std::string &age, con
     output.close();
 }
 
-std::vector<std::string> RBGraph::read_file(const int &filePointer) const
+std::vector<std::string> RBGraph::read_file(const int &filePointer)
 {
     char *na = new char[20];
     char *ag = new char[3];
@@ -149,14 +149,14 @@ std::vector<std::string> RBGraph::read_file(const int &filePointer) const
 
 //Graph Functions:
 
-void RBGraph::insert_user(const std::string &user) const
+void RBGraph::insert_user(const std::string &user)
 {
     Graphnode temp;
     temp.name = user;
     graph.push_back(temp);
 }
 
-void RBGraph::insert_friendship(const std::string &p1, const std::string &p2) const
+void RBGraph::insert_friendship(const std::string &p1, const std::string &p2)
 {
     for (int i = 0; i < graph.size(); i++)
     {
@@ -200,7 +200,7 @@ void RBGraph::insert_friendship(const std::string &p1, const std::string &p2) co
     }
 }
 
-void RBGraph::print_Graph()
+void RBGraph::print_Graph() const
 {
     Linked_List_Node *temp;
     std::cout << "Graph:" << std::endl;
@@ -359,7 +359,7 @@ void RBGraph::print(RB_Node *n) const
         {
             colour = "Black";
         }
-        std::cout << "Name: " << n->name << ", Colour: " << colour << std::endl;
+        std::cout << "Name: " << n->name << ", Colour: " << colour << ", File Pointer: " << n->filePointer << std::endl;
         print(n->right);
     }
     return;
@@ -591,5 +591,14 @@ void RBGraph::rrotate(RB_Node *&r, RB_Node *&entry)
     // set entry's parent be entry's old right child
     entry->parent = lc_entry;
 
+    return;
+}
+
+void RBGraph::clear(RB_Node* n) {
+    if (n) {
+        clear(n->left);
+        clear(n->right);
+        delete n;
+    }
     return;
 }
