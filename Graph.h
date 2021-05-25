@@ -79,7 +79,7 @@ public:
         return c++;
     }
 
-    string* readFile(int filePointer)
+    vector<string> readFile(int filePointer)
     {
         char *na = new char[20];
         char *ag = new char[3];
@@ -131,11 +131,11 @@ public:
             }
             o += occupation[i];
         }
-        string* arr = new string[3];
-        arr[0] = n;
-        arr[1] = a;
-        arr[2] = o;
-        return arr;
+        vector<string> s;
+        s.push_back(n);
+        s.push_back(a);
+        s.push_back(o);
+        return s;
     }
 
     void printGraph()

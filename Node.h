@@ -1,7 +1,7 @@
 #include<string>
 
-struct Node{
-    Node(){next = NULL;};
+struct Linked_List_Node{
+    Linked_List_Node(){next = NULL;};
     std::string name;
-    Node* next;
+    Linked_List_Node* next;
 };

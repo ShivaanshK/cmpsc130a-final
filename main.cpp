@@ -1,28 +1,24 @@
 #include <iostream>
 #include <string>
 #include <fstream>
-#include"Graph.h"
+#include"RBGraph.h"
 using namespace std;
 
 int main(int argc, char *argv[])
 {
-    Graph graph;
+    RBGraph rbgraph = RBGraph();
     ifstream infile;
     infile.open(string(argv[1]));
     string line;
     int counter = 0;
     while (getline(infile, line,'\n'))
     {
-        if(line != "" && counter != 0) graph.insert(line);
+        if(line != "" && counter != 0) rbgraph.insert(line);
         line = "";
         counter ++;
     } 
     infile.close();
     infile.clear();
-
-    string* output = graph.readFile(0);
-    cout << *(output) << ", " + *(output + 1) << ", " + *(output + 2) << endl; 
-    // graph.printGraph();
 
     return 1;
 }

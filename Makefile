@@ -1,8 +1,8 @@
-.PHONY:rb
-all:rb
+.PHONY:main
+all:main
 
-rb:
-	g++ -std=c++11 ds.cpp rb.cpp -o rb
+main:
+	g++ -std=c++11 RBGraph.cpp main.cpp -o main
 
 clean:
-	/bin/rm -rf *.o rb
+	/bin/rm -rf *.o main

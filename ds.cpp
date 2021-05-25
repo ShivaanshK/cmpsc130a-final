@@ -31,7 +31,7 @@ RBT::~RBT() {
     clear(root);
 }
 
-void RBT::clear(Node* n) {
+void RBT::clear(RB_Node* n) {
     if (n) {
         clear(n->left);
         clear(n->right);
@@ -40,22 +40,22 @@ void RBT::clear(Node* n) {
     return;
 }
 
-/* FIND AND PRINT A NODE */
+/* FIND AND PRINT A RB_Node */
 void RBT::exact_query(const std::string& name) const {
-    Node* query = find(name, root);
+    RB_Node* query = find(name, root);
     std::string occupation = "";
     std::cout << query->name << occupation << std::endl;
     return;
 }
 
-/* FIND A NODE */
-Node* RBT::find(const std::string& name, Node* n) const {
+/* FIND A RB_Node */
+RB_Node* RBT::find(const std::string& name, RB_Node* n) const {
     if (n) {
         if (n->name == name) {
             return n;
         }
         else {
-            Node* child = find(name, n->left);
+            RB_Node* child = find(name, n->left);
             if (!child) {
                 child = find(name, n->right);
             }
@@ -67,48 +67,48 @@ Node* RBT::find(const std::string& name, Node* n) const {
     }
 }
 
-/* PRINT A RANGE OF NODES IN LEXICOGRAPHICAL ORDER */
+/* PRINT A RANGE OF RB_NodeS IN LEXICOGRAPHICAL ORDER */
 void RBT::range_query(const std::string& name1, const std::string& name2) const {
-    std::vector<Node*> nodelist = find_range(name1, name2);
+    std::vector<RB_Node*> RB_Nodelist = find_range(name1, name2);
     std::string occupation;
-    for (auto& person : nodelist) {
+    for (auto& person : RB_Nodelist) {
         occupation = ""; 
         std::cout << person->name << occupation << std::endl;
     }
     return;
 }
 
-/* FIND A RANGE OF NODES */
-std::vector<Node*> RBT::find_range(const std::string& name1, const std::string& name2) const {
-    std::vector<Node*> nodelist;
-    nodelist.push_back(find(name1, root));
-    Node* current = successor(name1);
+/* FIND A RANGE OF RB_NodeS */
+std::vector<RB_Node*> RBT::find_range(const std::string& name1, const std::string& name2) const {
+    std::vector<RB_Node*> RB_Nodelist;
+    RB_Nodelist.push_back(find(name1, root));
+    RB_Node* current = successor(name1);
 
     while (current->name != name2) {
-        nodelist.push_back(current);
+        RB_Nodelist.push_back(current);
         current = successor(current->name);
     }
 
-    nodelist.push_back(find(name2, root));
-    return nodelist;
+    RB_Nodelist.push_back(find(name2, root));
+    return RB_Nodelist;
 }
 
-/* FIND THE NODE WITH NAME DIRECTLY SUCCEEDING THE GIVEN NAME */
-Node* RBT::successor(const std::string& name) const {
-    Node* current = find(name, root);
+/* FIND THE RB_Node WITH NAME DIRECTLY SUCCEEDING THE GIVEN NAME */
+RB_Node* RBT::successor(const std::string& name) const {
+    RB_Node* current = find(name, root);
     if (current) {
-        // if this node has a right subtree
+        // if this RB_Node has a right subtree
         if (current->right) {
             current = current->right;
             while (current->left != nullptr) {
                 current = current->left;
             }
         }
-        // if this node has no right subtree, 
-        // starting from root to that node, the last left node
-        // passed before arriving at the node is the successor
+        // if this RB_Node has no right subtree, 
+        // starting from root to that RB_Node, the last left RB_Node
+        // passed before arriving at the RB_Node is the successor
         else {
-            Node* lastleft = root;
+            RB_Node* lastleft = root;
             while (lastleft->name != name) {
                 if (lastleft->name < name) {
                     lastleft = lastleft->right;
@@ -119,8 +119,8 @@ Node* RBT::successor(const std::string& name) const {
                 }
             }
         }
-        // if the last left node passed is this node
-        // this node has no successor
+        // if the last left RB_Node passed is this RB_Node
+        // this RB_Node has no successor
         if (current->name == name) {
             return nullptr;
         }
@@ -135,14 +135,14 @@ Node* RBT::successor(const std::string& name) const {
     }
 }
 
-/* PRINT ALL NODES (INORDER TRAVERSAL) */
+/* PRINT ALL RB_NodeS (INORDER TRAVERSAL) */
 void RBT::print_all() const {
     print(root);
     return;
 }
 
 /* RECURSIVE PRINT */
-void RBT::print(Node* n) const {
+void RBT::print(RB_Node* n) const {
     std::string colour;
     if (n) {
         print(n->left);
@@ -158,10 +158,10 @@ void RBT::print(Node* n) const {
     return;
 }
 
-/* INSERT NEW NODE, AND MAINTAIN RBT PROPERTIES */
+/* INSERT NEW RB_Node, AND MAINTAIN RBT PROPERTIES */
 void RBT::insert(const std::string& name) {
     if (!find(name, root)) { // insert only if the name is not in the tree
-        Node* entry = new Node{name, red, elements++}; // increment the number of nodes after insert
+        RB_Node* entry = new RB_Node{name, red, elements++}; // increment the number of RB_Nodes after insert
         root = binsert(root, entry); // root == entry if tree is empty
         fix(root, entry); // after BST insert, fix the RBT
     }
@@ -169,7 +169,7 @@ void RBT::insert(const std::string& name) {
 }
 
 /* CALLED BY INSERT: PERFORMS BST INSERT */
-Node* RBT::binsert(Node* r, Node* entry) {
+RB_Node* RBT::binsert(RB_Node* r, RB_Node* entry) {
     if (!r) { // base case, insert new entry
         return entry; // root was empty, so set new entry as root
     }
@@ -188,10 +188,10 @@ Node* RBT::binsert(Node* r, Node* entry) {
 }
 
 /* CALLED BY INSERT: MAINTAINS RBT PROPERTIES */
-void RBT::fix(Node*& r, Node*& entry) {
-    Node* pt_entry = nullptr; // entry's parent
-    Node* uc_entry = nullptr; // entry's uncle
-    Node* gpt_entry = nullptr; // entry's grandparent
+void RBT::fix(RB_Node*& r, RB_Node*& entry) {
+    RB_Node* pt_entry = nullptr; // entry's parent
+    RB_Node* uc_entry = nullptr; // entry's uncle
+    RB_Node* gpt_entry = nullptr; // entry's grandparent
     
     // the following loop runs until:
     // 1. entry is root
@@ -270,9 +270,9 @@ void RBT::fix(Node*& r, Node*& entry) {
 }
 
 /* ROTATE LEFT, PIVOT = ENTRY */
-void RBT::lrotate(Node*& r, Node*& entry) {
+void RBT::lrotate(RB_Node*& r, RB_Node*& entry) {
     // temporary pointer to entry's right child 
-    Node* rc_entry = entry->right;
+    RB_Node* rc_entry = entry->right;
 
     // set entry's right child to be entry's right child's left child
     entry->right = rc_entry->left; 
@@ -321,9 +321,9 @@ void RBT::lrotate(Node*& r, Node*& entry) {
 }
 
 /* ROTATE RIGHT, PIVOT = ENTRY */
-void RBT::rrotate(Node*& r, Node*& entry) {
+void RBT::rrotate(RB_Node*& r, RB_Node*& entry) {
     // temporary pointer to entry's left child 
-    Node* lc_entry = entry->left;
+    RB_Node* lc_entry = entry->left;
 
     // set entry's left child to be entry's left child's right child
     entry->left = lc_entry->right;
