@@ -51,32 +51,34 @@ void RBGraph::insert(const std::string &s)
     {                                                      // insert only if the name is not in the tree
         RB_Node *entry = new RB_Node{name, red, elements}; // increment the number of RB_Nodes after insert
         root = binsert(root, entry);                       // root == entry if tree is empty
-        fix(root, entry);                                  // after BST insert, fix the RBT
-    }
-    write_to_file(name, age, occupation);
-    Graphnode temp;
-    temp.name = name;
-    temp.filePointer = elements;
-    graph.push_back(temp);
-    Linked_List_Node *tail;
-    for (int i = 0; i < friends.size(); i++)
-    {
-        if (graph[graph.size() - 1].list == NULL)
+        fix(root, entry);
+        write_to_file(name, age, occupation);
+        Graphnode temp;
+        temp.name = name;
+        temp.filePointer = elements;
+        graph.push_back(temp);
+        Linked_List_Node *tail;
+        for (int i = 0; i < friends.size(); i++)
         {
-            Linked_List_Node *node = new Linked_List_Node();
-            node->name = friends[i];
-            graph[graph.size() - 1].list = node;
-            tail = node;
+            if (graph[graph.size() - 1].list == nullptr)
+            {
+                Linked_List_Node *node = new Linked_List_Node();
+                node->name = friends[i];
+                graph[graph.size() - 1].list = node;
+                tail = node;
+            }
+            else
+            {
+                Linked_List_Node *node = new Linked_List_Node();
+                node->name = friends[i];
+                tail->next = node;
+                tail = node;
+            }
         }
-        else
-        {
-            Linked_List_Node *node = new Linked_List_Node();
-            node->name = friends[i];
-            tail->next = node;
-            tail = node;
-        }
+        elements++; // after BST insert, fix the RBT
     }
-    elements++;
+
+    return;
 }
 
 //Read/Write to file functions:
@@ -88,7 +90,7 @@ void RBGraph::write_to_file(const std::string &name, const std::string &age, con
     output.close();
 }
 
-std::vector<std::string> RBGraph::read_file(const int &filePointer)
+std::vector<std::string> RBGraph::read_file(i &filePointer)
 {
     char *na = new char[20];
     char *ag = new char[3];
@@ -100,10 +102,7 @@ std::vector<std::string> RBGraph::read_file(const int &filePointer)
     input.read(occ, 30);
     input.close();
     input.clear();
-    std::string name(na);
-    std::string age(ag);
-    std::string occupation(occ);
-    std::string n(""), a(""), o("");
+    std::string name(na), age(ag), occupation(occ), n(""), a(""), o("");
     int k = 0;
     for (int i = 0; i < 20; i++)
     {
@@ -149,11 +148,18 @@ std::vector<std::string> RBGraph::read_file(const int &filePointer)
 
 //Graph Functions:
 
-void RBGraph::insert_user(const std::string &user)
+void RBGraph::insert_user(const std::string &name, const std::string &age, const std::string &occupation)
 {
+    RB_Node *entry = new RB_Node{name, red, elements}; // increment the number of RB_Nodes after insert
+    root = binsert(root, entry);                       // root == entry if tree is empty
+    fix(root, entry);
+    write_to_file(name, age, occupation);
     Graphnode temp;
-    temp.name = user;
+    temp.name = name;
+    temp.filePointer = elements;
     graph.push_back(temp);
+    elements++;
+    return;
 }
 
 void RBGraph::insert_friendship(const std::string &p1, const std::string &p2)
@@ -164,7 +170,7 @@ void RBGraph::insert_friendship(const std::string &p1, const std::string &p2)
         {
 
             Linked_List_Node *temp = graph[i].list;
-            if (temp == NULL)
+            if (temp == nullptr)
             {
                 Linked_List_Node *node = new Linked_List_Node();
                 node->name = p2;
@@ -172,7 +178,7 @@ void RBGraph::insert_friendship(const std::string &p1, const std::string &p2)
             }
             else
             {
-                while (temp->next != NULL)
+                while (temp->next != nullptr)
                     temp = temp->next;
                 Linked_List_Node *node = new Linked_List_Node();
                 node->name = p2;
@@ -182,7 +188,7 @@ void RBGraph::insert_friendship(const std::string &p1, const std::string &p2)
         else if (graph[i].name == p2)
         {
             Linked_List_Node *temp = graph[i].list;
-            if (temp == NULL)
+            if (temp == nullptr)
             {
                 Linked_List_Node *node = new Linked_List_Node();
                 node->name = p1;
@@ -190,7 +196,7 @@ void RBGraph::insert_friendship(const std::string &p1, const std::string &p2)
             }
             else
             {
-                while (temp->next != NULL)
+                while (temp->next != nullptr)
                     temp = temp->next;
                 Linked_List_Node *node = new Linked_List_Node();
                 node->name = p1;
@@ -208,7 +214,7 @@ void RBGraph::print_Graph() const
     {
         std::cout << graph[i].filePointer << ": " << graph[i].name;
         temp = graph[i].list;
-        while (temp != NULL)
+        while (temp != nullptr)
         {
             std::cout << " --> " << temp->name;
             temp = temp->next;
@@ -220,12 +226,41 @@ void RBGraph::print_Graph() const
 
 //RB Tree Functions:
 
-/* FIND AND PRINT A RB_Node */
-void RBGraph::exact_query(const std::string &name) const
+/* FIND AND PRINT A RB_Node and its friends */
+void RBGraph::friendship_query(const std::string &name)
 {
-    RB_Node *query = find(name, root);
-    std::string occupation = "";
-    std::cout << query->name << occupation << std::endl;
+    if (find(name, root))
+    {
+        Graphnode node;
+        for (Graphnode person : graph)
+        {
+            if (person.name == name)
+                node = person;
+        }
+        RB_Node *query = find(node.name, root);
+        std::vector<std::string> nao = read_file(query->filePointer); //stores vector as <name, age, occupation>
+        std::cout << nao[0] << "'s information:" << std::endl;
+        std::cout << "Age: " << nao[1] << std::endl
+                  << "Occupation: " << nao[2] << std::endl
+                  << std::endl;
+        std::cout << "------------------------------------------" << std::endl;
+        std::cout << nao[0] << " friends' information:" << std::endl
+                  << std::endl;
+        Linked_List_Node *temp = node.list;
+        while (temp != NULL)
+        {
+            query = find(temp->name, root);
+            nao = read_file(query->filePointer);
+            std::cout << nao[0] << "'s information:" << std::endl;
+            std::cout << "Age: " << nao[1] << std::endl
+                      << "Occupation: " << nao[2] << std::endl
+                      << std::endl;
+            temp = temp->next;
+        }
+        std::cout << "------------------------------------------" << std::endl;
+        std::cout << "------------------------------------------" << std::endl
+                  << std::endl;
+    }
     return;
 }
 
@@ -255,14 +290,40 @@ RB_Node *RBGraph::find(const std::string &name, RB_Node *n) const
 }
 
 /* PRINT A RANGE OF RB_NodeS IN LEXICOGRAPHICAL ORDER */
-void RBGraph::range_query(const std::string &name1, const std::string &name2) const
+void RBGraph::range_query(const std::string &name1, const std::string &name2)
 {
     std::vector<RB_Node *> RB_Nodelist = find_range(name1, name2);
-    std::string occupation;
-    for (auto &person : RB_Nodelist)
+    for (RB_Node *node : RB_Nodelist)
     {
-        occupation = "";
-        std::cout << person->name << occupation << std::endl;
+        Graphnode n;
+        for (Graphnode person : graph)
+        {
+            if (person.name == node->name)
+                n = person;
+        }
+        RB_Node *query = find(n.name, root);
+        std::vector<std::string> nao = read_file(query->filePointer); //stores vector as <name, age, occupation>
+        std::cout << nao[0] << "'s information:" << std::endl;
+        std::cout << "Age: " << nao[1] << std::endl
+                  << "Occupation: " << nao[2] << std::endl
+                  << std::endl;
+        std::cout << "------------------------------------------" << std::endl;
+        std::cout << nao[0] << " friends' information:" << std::endl
+                  << std::endl;
+        Linked_List_Node *temp = n.list;
+        while (temp != NULL)
+        {
+            query = find(temp->name, root);
+            nao = read_file(query->filePointer);
+            std::cout << nao[0] << "'s information:" << std::endl;
+            std::cout << "Age: " << nao[1] << std::endl
+                      << "Occupation: " << nao[2] << std::endl
+                      << std::endl;
+            temp = temp->next;
+        }
+        std::cout << "------------------------------------------" << std::endl;
+        std::cout << "------------------------------------------" << std::endl
+                  << std::endl;
     }
     return;
 }
@@ -281,6 +342,7 @@ std::vector<RB_Node *> RBGraph::find_range(const std::string &name1, const std::
     }
 
     RB_Nodelist.push_back(find(name2, root));
+
     return RB_Nodelist;
 }
 
@@ -338,29 +400,49 @@ RB_Node *RBGraph::successor(const std::string &name) const
 }
 
 /* PRINT ALL RB_NodeS (INORDER TRAVERSAL) */
-void RBGraph::print_all() const
+void RBGraph::print_all()
 {
     print(root);
     return;
 }
 
 /* RECURSIVE PRINT */
-void RBGraph::print(RB_Node *n) const
+void RBGraph::print(RB_Node *node)
 {
-    std::string colour;
-    if (n)
+    if (node)
     {
-        print(n->left);
-        if (n->color == red)
+        print(node->left);
+        Graphnode n;
+        for (Graphnode person : graph)
         {
-            colour = "Red";
+            if (person.name == node->name)
+                n = person;
         }
-        else
+        RB_Node *query = find(n.name, root);
+        std::vector<std::string> nao = read_file(query->filePointer); //stores vector as <name, age, occupation>
+        std::cout << nao[0] << "'s information:" << std::endl;
+        std::cout << "Age: " << nao[1] << std::endl
+                  << "Occupation: " << nao[2] << std::endl
+                  << std::endl;
+        std::cout << "------------------------------------------" << std::endl;
+        std::cout << nao[0] << " friends' information:" << std::endl
+                  << std::endl;
+        Linked_List_Node *temp = n.list;
+        while (temp != NULL)
         {
-            colour = "Black";
+            query = find(temp->name, root);
+            nao = read_file(query->filePointer);
+            std::cout << nao[0] << "'s information:" << std::endl;
+            std::cout << "Age: " << nao[1] << std::endl
+                      << "Occupation: " << nao[2] << std::endl
+                      << std::endl;
+            temp = temp->next;
         }
-        std::cout << "Name: " << n->name << ", Colour: " << colour << ", File Pointer: " << n->filePointer << std::endl;
-        print(n->right);
+        std::cout << "------------------------------------------" << std::endl;
+        std::cout << "------------------------------------------" << std::endl
+                  << std::endl;
+
+        print(node->right);
     }
     return;
 }
@@ -594,8 +676,10 @@ void RBGraph::rrotate(RB_Node *&r, RB_Node *&entry)
     return;
 }
 
-void RBGraph::clear(RB_Node* n) {
-    if (n) {
+void RBGraph::clear(RB_Node *n)
+{
+    if (n)
+    {
         clear(n->left);
         clear(n->right);
         delete n;

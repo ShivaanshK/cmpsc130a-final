@@ -19,9 +19,5 @@ int main(int argc, char *argv[])
     infile.close();
     infile.clear();
 
-    rbgraph.print_Graph();
-    std::cout << std::endl;
-    rbgraph.print_all();
-
     return 1;
 }
