@@ -5,8 +5,8 @@
 #include <string>
 #include <vector>
 #include <sstream> // for std::ostringstream in read_file()
-#include <utility> // for std::swap in fix(), graphnode
-#include <iomanip>
+#include <utility> // for std::swap in fix(), std::pair for graphnode
+#include <iomanip> // setw(), setfill(), in write_file()
 #include <fstream>
 
 typedef uint32_t i; // graph and file indices

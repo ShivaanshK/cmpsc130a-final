@@ -1,0 +1,1853 @@
+Printing The Adjacency List ...
+Graph:
+0: Kendra Benson --> Mason Davis --> Joshua Wyatt --> Daniel Taylor --> Lori Rowe --> Paula Cabrera --> Sarah Davis --> Virginia Morales --> Rachel Hernandez --> Tara White --> Mike Willis --> Kelly Gonzales --> Jesse Sherman --> Brandon Davis --> Christopher Stewart --> Edward Fisher
+1: Mason Davis --> Kendra Benson --> John Armstrong --> Elizabeth Leon PhD --> Carol Flores --> Frank Taylor --> Adam Parks --> Steven West --> Nathaniel Harris --> Sara Howell --> Anna Hooper --> Craig Carrillo
+2: Lindsay Davis --> Aaron Jones --> Julie Long --> Kevin Young --> Justin Reid --> Steven West --> Benjamin Palmer --> Amy Pearson --> Paul Dudley --> Ryan Padilla --> Christopher Stewart
+3: Mary Cochran --> Carol Flores --> Amanda Hawkins --> Julie Long --> Daniel Barber --> Chelsea Combs --> Virginia Morales --> Emma Wagner --> Samantha Mclaughlin --> Sarah Morris --> Mary Smith --> Fred Harris
+4: John Armstrong --> Mason Davis --> Ryan Webb --> David Clarke --> Paul Dudley
+5: Elizabeth Leon PhD --> Mason Davis --> Joshua Wyatt --> Brianna English --> Charles Rollins --> Michael Hall --> Kathy Brown --> Adam Parks --> Kevin Young --> Jennifer Hoffman --> Clarence Martinez --> Emily Myers
+6: Joshua Wyatt --> Kendra Benson --> Elizabeth Leon PhD --> Lori Rowe --> Kenneth Brewer --> Johnny Brown --> Samuel Reed --> Mike Willis --> Kelly Gonzales --> Jennifer Hoffman --> Jesse Sherman --> Christopher Fox --> Edward Fisher
+7: Brianna English --> Elizabeth Leon PhD --> Daniel Taylor --> Kendra Brown --> Adam Parks --> Sarah Davis --> James Nichols --> Vincent Miller --> Frank Henderson --> Clarence Martinez
+8: Charles Rollins --> Elizabeth Leon PhD --> Kenneth Brewer --> Ryan Campbell --> Adam Parks --> Kevin Young --> Virginia Morales --> Michelle English --> James Nichols --> James Robles --> Anna Hooper --> Michael James
+9: Daniel Taylor --> Kendra Benson --> Brianna English --> Lori Rowe --> Aaron Jones --> Christine Paul --> Manuel Donovan --> James Nichols --> Amy Pearson --> Paul Dudley --> Christopher Fox --> Brandon Davis --> Todd Campbell
+10: Lori Rowe --> Kendra Benson --> Joshua Wyatt --> Daniel Taylor --> Eric Cook --> Amanda Green --> Annette Wagner --> Mary Smith --> Michael James
+11: Kenneth Brewer --> Joshua Wyatt --> Charles Rollins --> Erica Harper --> Sarah Ward --> Michelle English --> Paul Dudley --> Jesse Sherman --> Anna Hooper --> Brandon Davis --> Edward Fisher
+12: Carol Flores --> Mason Davis --> Mary Cochran --> Daniel Barber --> Brett Gallagher --> Sarah Davis --> Samuel Reed --> Elizabeth Long --> Veronica Hart --> Emily Myers --> James Russell
+13: Aaron Jones --> Lindsay Davis --> Daniel Taylor --> Johnny Brown --> Daniel Barber --> Morgan Townsend --> Michelle English --> Kelly Gonzales --> James Robles --> Frank Henderson --> Christopher Stewart
+14: Johnny Brown --> Joshua Wyatt --> Aaron Jones --> Julie Long --> Christine Paul --> Kelly Gonzales --> Paul Dudley --> James Robles --> Annette Wagner --> Frank Henderson --> Christopher Simmons --> Todd Campbell
+15: Amanda Hawkins --> Mary Cochran --> Sandra Perez --> Christine Paul --> Tammy Thompson --> Rachel Hernandez --> Nathaniel Harris --> Amy Pearson --> Ryan Padilla --> Clarence Martinez --> Mary Duke --> Christopher Simmons
+16: Julie Long --> Lindsay Davis --> Mary Cochran --> Johnny Brown --> Erica Harper --> Morgan Townsend --> Sarah Martin --> Benjamin Palmer --> Jamie Price --> Kelly Gonzales --> Brandon Davis --> Michael James
+17: Sandra Perez --> Amanda Hawkins --> Michael Hall --> Brandy Miller --> David Clarke --> Sarah Davis --> Morgan Townsend --> Chase Miller --> Christopher Simmons --> Todd Campbell
+18: Alice Todd --> Paula Cabrera --> Morgan Townsend --> Gail Rodriguez --> Sara Howell --> Craig Carrillo
+19: Michael Hall --> Elizabeth Leon PhD --> Sandra Perez --> Linda Weber --> Mary Duke --> Christopher Simmons
+20: Ryan Campbell --> Charles Rollins --> Frank Taylor --> Virginia Morales --> Sarah Morris --> James Robles --> Ryan Crawford --> James Russell
+21: Erica Harper --> Kenneth Brewer --> Julie Long --> Brandy Miller --> Patricia Kramer --> Anna Hooper --> Brandon Davis --> Craig Carrillo
+22: Daniel Barber --> Mary Cochran --> Carol Flores --> Aaron Jones --> Lisa Lopez --> Frank Henderson
+23: Paula Cabrera --> Kendra Benson --> Alice Todd --> Brandy Miller --> Virginia Morales --> Sarah Martin --> Tara White --> Nathaniel Harris --> Joshua Tran --> Benjamin Palmer --> Annette Wagner --> Mary Smith --> Linda Weber --> Clarence Martinez --> Edward Fisher
+24: Frank Taylor --> Mason Davis --> Ryan Campbell --> Sarah Ward --> Amy Pearson --> Jesse Sherman --> Mary Smith
+25: Kendra Brown --> Brianna English --> Brett Gallagher --> Kathy Brown --> Patricia Kramer --> Samuel Reed --> Benjamin Palmer --> Kelly Gonzales --> Fred Harris
+26: Lisa Lopez --> Daniel Barber --> Brandy Miller --> Rachel Hernandez --> Emma Wagner --> Amy Pearson --> Frank Henderson
+27: Ryan Webb --> John Armstrong --> Sarah Davis --> Tammie Adams --> Chelsea Combs --> Christopher Jackson --> Christopher Simmons --> James Russell
+28: Brett Gallagher --> Carol Flores --> Kendra Brown --> Chelsea Combs --> Kevin Young --> Manuel Donovan --> Rachel Hernandez --> Sarah Martin --> Jennifer Hoffman --> Ryan Padilla --> Linda Weber --> Mary Duke --> Edward Fisher --> Chase Miller --> Todd Campbell
+29: Kathy Brown --> Elizabeth Leon PhD --> Kendra Brown --> Sarah Morris --> Jennifer Hoffman --> Christopher Jackson --> Rebecca Ramirez --> Brandon Davis
+30: Brandy Miller --> Sandra Perez --> Erica Harper --> Paula Cabrera --> Lisa Lopez --> Adam Parks --> Justin Reid --> Rachel Hernandez --> Sarah Martin --> Christopher Jackson --> Clarence Martinez --> Christopher Stewart --> Emily Myers
+31: Christine Rojas --> David Clarke --> Justin Reid --> Samuel Reed --> Nathaniel Harris --> Craig Carrillo --> Christopher Simmons
+32: David Clarke --> John Armstrong --> Sandra Perez --> Christine Rojas --> Mr. Vincent Jackson  --> Samantha Mclaughlin --> Jamie Price --> Amy Pearson --> Mary Smith --> Brandon Davis
+33: Adam Parks --> Mason Davis --> Elizabeth Leon PhD --> Brianna English --> Charles Rollins --> Brandy Miller --> Morgan Townsend --> Amanda Green --> William Richardson --> Jesse Sherman --> Linda Weber --> Christopher Simmons
+34: Christine Paul --> Daniel Taylor --> Johnny Brown --> Amanda Hawkins --> Nathaniel Harris --> James Nichols --> Samantha Mclaughlin --> Christopher Jackson --> Jesse Sherman --> Craig Carrillo
+35: Sarah Davis --> Kendra Benson --> Brianna English --> Carol Flores --> Sandra Perez --> Ryan Webb --> Chelsea Combs --> Samuel Reed --> Virginia Morales --> Rachel Hernandez --> Tara White --> Steven West --> Benjamin Palmer --> Jamie Price --> William Richardson --> Paul Dudley --> Christopher Jackson --> Christopher Fox --> Anna Hooper --> Brandon Davis --> Emily Myers
+36: Tammie Adams --> Ryan Webb --> Mr. Vincent Jackson  --> Christopher Jackson --> Frank Henderson
+37: Mr. Vincent Jackson  --> David Clarke --> Tammie Adams --> Morgan Townsend --> Sarah Ward --> Tara White --> Amanda Green --> Vincent Miller --> Edward Fisher --> Michael James --> Todd Campbell
+38: Chelsea Combs --> Mary Cochran --> Ryan Webb --> Brett Gallagher --> Sarah Davis --> Virginia Morales --> Rachel Hernandez --> Tara White --> Michelle English --> William Richardson --> Annette Wagner --> Michael James
+39: Morgan Townsend --> Aaron Jones --> Julie Long --> Sandra Perez --> Alice Todd --> Adam Parks --> Mr. Vincent Jackson  --> Gail Rodriguez --> Sarah Martin --> Steven West --> Nathaniel Harris --> Michelle English --> Jamie Price --> Mike Willis --> Kelly Gonzales --> Amy Pearson --> Paul Dudley --> Christopher Jackson --> Veronica Hart --> Fred Harris --> Emily Myers --> Todd Campbell
+40: Patricia Kramer --> Erica Harper --> Kendra Brown --> Justin Reid --> Steven West --> Emma Wagner --> Samantha Mclaughlin --> Amanda Green --> Mike Willis --> Christopher Jackson --> Jesse Sherman --> Frank Henderson --> Rebecca Ramirez --> Craig Carrillo
+41: Kevin Young --> Lindsay Davis --> Elizabeth Leon PhD --> Charles Rollins --> Brett Gallagher --> Amanda Green --> Paul Dudley --> Clarence Martinez --> Ryan Crawford --> Kathleen Schmidt
+42: Tammy Thompson --> Amanda Hawkins --> William Richardson --> Veronica Hart --> Craig Carrillo
+43: Eric Cook --> Lori Rowe --> Gail Rodriguez --> Sara Howell --> William Richardson --> Elizabeth Long --> Jesse Sherman --> Frank Henderson --> Veronica Hart --> Craig Carrillo
+44: Justin Reid --> Lindsay Davis --> Brandy Miller --> Christine Rojas --> Patricia Kramer --> Sarah Ward --> Sara Howell --> Amy Pearson --> Elizabeth Long --> Christopher Fox --> Mary Smith --> Fred Harris --> Michael James --> Kathleen Schmidt
+45: Sarah Ward --> Kenneth Brewer --> Frank Taylor --> Mr. Vincent Jackson  --> Justin Reid --> Samuel Reed --> Gail Rodriguez --> Virginia Morales --> Paul Dudley --> Chase Miller
+46: Samuel Reed --> Joshua Wyatt --> Carol Flores --> Kendra Brown --> Christine Rojas --> Sarah Davis --> Sarah Ward --> Benjamin Palmer --> Mike Willis --> Jennifer Hoffman --> Craig Carrillo --> Christopher Simmons
+47: Gail Rodriguez --> Alice Todd --> Morgan Townsend --> Eric Cook --> Sarah Ward --> Amanda Green --> Annette Wagner --> Elizabeth Long
+48: Manuel Donovan --> Daniel Taylor --> Brett Gallagher --> Mike Willis
+49: Virginia Morales --> Kendra Benson --> Mary Cochran --> Charles Rollins --> Ryan Campbell --> Paula Cabrera --> Sarah Davis --> Chelsea Combs --> Sarah Ward --> Michelle English --> Benjamin Palmer
+50: Rachel Hernandez --> Kendra Benson --> Amanda Hawkins --> Lisa Lopez --> Brett Gallagher --> Brandy Miller --> Sarah Davis --> Chelsea Combs --> Steven West --> James Robles --> Brandon Davis --> Fred Harris --> Craig Carrillo
+51: Sarah Martin --> Julie Long --> Paula Cabrera --> Brett Gallagher --> Brandy Miller --> Morgan Townsend --> Anna Hooper --> Edward Fisher --> Kathleen Schmidt
+52: Tara White --> Kendra Benson --> Paula Cabrera --> Sarah Davis --> Mr. Vincent Jackson  --> Chelsea Combs --> Joshua Tran --> Sarah Morris --> Ryan Padilla --> Annette Wagner --> Elizabeth Long --> Christopher Stewart --> Mary Duke --> Christopher Simmons
+53: Steven West --> Mason Davis --> Lindsay Davis --> Sarah Davis --> Morgan Townsend --> Patricia Kramer --> Rachel Hernandez --> Nathaniel Harris --> Samantha Mclaughlin --> Ryan Padilla --> Christopher Jackson --> Annette Wagner
+54: Nathaniel Harris --> Mason Davis --> Amanda Hawkins --> Paula Cabrera --> Christine Rojas --> Christine Paul --> Morgan Townsend --> Steven West --> Clarence Martinez --> Anna Hooper --> Rebecca Ramirez --> Chase Miller
+55: Michelle English --> Charles Rollins --> Kenneth Brewer --> Aaron Jones --> Chelsea Combs --> Morgan Townsend --> Virginia Morales --> Emma Wagner --> Amanda Green --> William Richardson --> James Robles --> Frank Henderson --> Clarence Martinez --> Mary Duke
+56: James Nichols --> Brianna English --> Charles Rollins --> Daniel Taylor --> Christine Paul --> Samantha Mclaughlin --> Benjamin Palmer --> Sara Howell --> Sarah Morris
+57: Emma Wagner --> Mary Cochran --> Lisa Lopez --> Patricia Kramer --> Michelle English --> Benjamin Palmer --> Paul Dudley --> Anna Hooper
+58: Joshua Tran --> Paula Cabrera --> Tara White --> Sara Howell --> Sarah Morris --> Paul Dudley --> Brandon Davis
+59: Samantha Mclaughlin --> Mary Cochran --> David Clarke --> Christine Paul --> Patricia Kramer --> Steven West --> James Nichols --> Sarah Morris --> Frank Henderson --> Brandon Davis --> Craig Carrillo
+60: Benjamin Palmer --> Lindsay Davis --> Julie Long --> Paula Cabrera --> Kendra Brown --> Sarah Davis --> Samuel Reed --> Virginia Morales --> James Nichols --> Emma Wagner --> Jennifer Hoffman --> Craig Carrillo
+61: Jamie Price --> Julie Long --> David Clarke --> Sarah Davis --> Morgan Townsend --> Amanda Green --> Jennifer Hoffman --> Anna Hooper --> Veronica Hart
+62: Amanda Green --> Lori Rowe --> Adam Parks --> Mr. Vincent Jackson  --> Patricia Kramer --> Kevin Young --> Gail Rodriguez --> Michelle English --> Jamie Price --> Sara Howell --> Jennifer Hoffman --> Clarence Martinez --> Rebecca Ramirez
+63: Sara Howell --> Mason Davis --> Alice Todd --> Eric Cook --> Justin Reid --> James Nichols --> Joshua Tran --> Amanda Green --> Mary Smith --> Anna Hooper --> Edward Fisher --> James Russell
+64: Mike Willis --> Kendra Benson --> Joshua Wyatt --> Morgan Townsend --> Patricia Kramer --> Samuel Reed --> Manuel Donovan --> Craig Carrillo --> Kathleen Schmidt
+65: William Richardson --> Adam Parks --> Sarah Davis --> Chelsea Combs --> Tammy Thompson --> Eric Cook --> Michelle English --> Ryan Padilla --> Linda Weber --> Fred Harris --> Christopher Stewart
+66: Sarah Morris --> Mary Cochran --> Ryan Campbell --> Kathy Brown --> Tara White --> James Nichols --> Joshua Tran --> Samantha Mclaughlin --> Amy Pearson --> Paul Dudley --> Christopher Stewart --> Mary Duke --> Kathleen Schmidt --> Todd Campbell
+67: Kelly Gonzales --> Kendra Benson --> Joshua Wyatt --> Aaron Jones --> Johnny Brown --> Julie Long --> Kendra Brown --> Morgan Townsend --> Clarence Martinez --> Christopher Stewart --> Todd Campbell
+68: Amy Pearson --> Lindsay Davis --> Daniel Taylor --> Amanda Hawkins --> Frank Taylor --> Lisa Lopez --> David Clarke --> Morgan Townsend --> Justin Reid --> Sarah Morris --> Christopher Fox --> Veronica Hart --> Fred Harris
+69: Jennifer Hoffman --> Elizabeth Leon PhD --> Joshua Wyatt --> Brett Gallagher --> Kathy Brown --> Samuel Reed --> Benjamin Palmer --> Jamie Price --> Amanda Green --> Christopher Jackson --> Frank Henderson --> Brandon Davis --> Fred Harris
+70: Vincent Miller --> Brianna English --> Mr. Vincent Jackson  --> Linda Weber --> Veronica Hart
+71: Paul Dudley --> Lindsay Davis --> John Armstrong --> Daniel Taylor --> Kenneth Brewer --> Johnny Brown --> Sarah Davis --> Morgan Townsend --> Kevin Young --> Sarah Ward --> Emma Wagner --> Joshua Tran --> Sarah Morris --> Veronica Hart --> James Russell --> Todd Campbell
+72: Ryan Padilla --> Lindsay Davis --> Amanda Hawkins --> Brett Gallagher --> Tara White --> Steven West --> William Richardson --> Christopher Jackson --> Annette Wagner --> Jesse Sherman --> Veronica Hart
+73: Christopher Jackson --> Ryan Webb --> Kathy Brown --> Brandy Miller --> Christine Paul --> Sarah Davis --> Tammie Adams --> Morgan Townsend --> Patricia Kramer --> Steven West --> Jennifer Hoffman --> Ryan Padilla --> Linda Weber --> Anna Hooper --> Veronica Hart
+74: James Robles --> Charles Rollins --> Aaron Jones --> Johnny Brown --> Ryan Campbell --> Rachel Hernandez --> Michelle English --> Linda Weber --> Chase Miller
+75: Annette Wagner --> Lori Rowe --> Johnny Brown --> Paula Cabrera --> Chelsea Combs --> Gail Rodriguez --> Tara White --> Steven West --> Ryan Padilla --> Linda Weber --> Craig Carrillo --> Christopher Stewart --> Emily Myers
+76: Elizabeth Long --> Carol Flores --> Eric Cook --> Justin Reid --> Gail Rodriguez --> Tara White --> Linda Weber --> Rebecca Ramirez
+77: Jesse Sherman --> Kendra Benson --> Joshua Wyatt --> Kenneth Brewer --> Frank Taylor --> Adam Parks --> Christine Paul --> Patricia Kramer --> Eric Cook --> Ryan Padilla --> Craig Carrillo --> Emily Myers
+78: Christopher Fox --> Joshua Wyatt --> Daniel Taylor --> Sarah Davis --> Justin Reid --> Amy Pearson --> Mary Duke --> Chase Miller --> Ryan Crawford
+79: Frank Henderson --> Brianna English --> Aaron Jones --> Johnny Brown --> Daniel Barber --> Lisa Lopez --> Tammie Adams --> Patricia Kramer --> Eric Cook --> Michelle English --> Samantha Mclaughlin --> Jennifer Hoffman --> Craig Carrillo --> Ryan Crawford
+80: Mary Smith --> Mary Cochran --> Lori Rowe --> Paula Cabrera --> Frank Taylor --> David Clarke --> Justin Reid --> Sara Howell --> Rebecca Ramirez
+81: Linda Weber --> Michael Hall --> Paula Cabrera --> Brett Gallagher --> Adam Parks --> William Richardson --> Vincent Miller --> Christopher Jackson --> James Robles --> Annette Wagner --> Elizabeth Long --> Veronica Hart --> Craig Carrillo
+82: Clarence Martinez --> Elizabeth Leon PhD --> Brianna English --> Amanda Hawkins --> Paula Cabrera --> Brandy Miller --> Kevin Young --> Nathaniel Harris --> Michelle English --> Amanda Green --> Kelly Gonzales --> Christopher Simmons
+83: Anna Hooper --> Mason Davis --> Charles Rollins --> Kenneth Brewer --> Erica Harper --> Sarah Davis --> Sarah Martin --> Nathaniel Harris --> Emma Wagner --> Jamie Price --> Sara Howell --> Christopher Jackson --> Fred Harris --> Michael James
+84: Veronica Hart --> Carol Flores --> Morgan Townsend --> Tammy Thompson --> Eric Cook --> Jamie Price --> Amy Pearson --> Vincent Miller --> Paul Dudley --> Ryan Padilla --> Christopher Jackson --> Linda Weber --> James Russell
+85: Rebecca Ramirez --> Kathy Brown --> Patricia Kramer --> Nathaniel Harris --> Amanda Green --> Elizabeth Long --> Mary Smith --> Chase Miller --> Todd Campbell
+86: Brandon Davis --> Kendra Benson --> Daniel Taylor --> Kenneth Brewer --> Julie Long --> Erica Harper --> Kathy Brown --> David Clarke --> Sarah Davis --> Rachel Hernandez --> Joshua Tran --> Samantha Mclaughlin --> Jennifer Hoffman --> Craig Carrillo
+87: Fred Harris --> Mary Cochran --> Kendra Brown --> Morgan Townsend --> Justin Reid --> Rachel Hernandez --> William Richardson --> Amy Pearson --> Jennifer Hoffman --> Anna Hooper
+88: Craig Carrillo --> Mason Davis --> Alice Todd --> Erica Harper --> Christine Rojas --> Christine Paul --> Patricia Kramer --> Tammy Thompson --> Eric Cook --> Samuel Reed --> Rachel Hernandez --> Samantha Mclaughlin --> Benjamin Palmer --> Mike Willis --> Annette Wagner --> Jesse Sherman --> Frank Henderson --> Linda Weber --> Brandon Davis --> Chase Miller
+89: Christopher Stewart --> Kendra Benson --> Lindsay Davis --> Aaron Jones --> Brandy Miller --> Tara White --> William Richardson --> Sarah Morris --> Kelly Gonzales --> Annette Wagner
+90: Mary Duke --> Amanda Hawkins --> Michael Hall --> Brett Gallagher --> Tara White --> Michelle English --> Sarah Morris --> Christopher Fox --> Chase Miller --> Emily Myers
+91: Edward Fisher --> Kendra Benson --> Joshua Wyatt --> Kenneth Brewer --> Paula Cabrera --> Brett Gallagher --> Mr. Vincent Jackson  --> Sarah Martin --> Sara Howell --> Chase Miller --> Christopher Simmons --> Emily Myers
+92: Chase Miller --> Sandra Perez --> Brett Gallagher --> Sarah Ward --> Nathaniel Harris --> James Robles --> Christopher Fox --> Rebecca Ramirez --> Craig Carrillo --> Mary Duke --> Edward Fisher --> Emily Myers
+93: Ryan Crawford --> Ryan Campbell --> Kevin Young --> Christopher Fox --> Frank Henderson
+94: Christopher Simmons --> Johnny Brown --> Amanda Hawkins --> Sandra Perez --> Michael Hall --> Ryan Webb --> Christine Rojas --> Adam Parks --> Samuel Reed --> Tara White --> Clarence Martinez --> Edward Fisher --> Todd Campbell
+95: Michael James --> Charles Rollins --> Lori Rowe --> Julie Long --> Mr. Vincent Jackson  --> Chelsea Combs --> Justin Reid --> Anna Hooper
+96: Kathleen Schmidt --> Kevin Young --> Justin Reid --> Sarah Martin --> Mike Willis --> Sarah Morris --> James Russell --> Todd Campbell
+97: Emily Myers --> Elizabeth Leon PhD --> Carol Flores --> Brandy Miller --> Sarah Davis --> Morgan Townsend --> Annette Wagner --> Jesse Sherman --> Mary Duke --> Edward Fisher --> Chase Miller
+98: James Russell --> Carol Flores --> Ryan Campbell --> Ryan Webb --> Sara Howell --> Paul Dudley --> Veronica Hart --> Kathleen Schmidt
+99: Todd Campbell --> Daniel Taylor --> Johnny Brown --> Sandra Perez --> Brett Gallagher --> Mr. Vincent Jackson  --> Morgan Townsend --> Sarah Morris --> Kelly Gonzales --> Paul Dudley --> Rebecca Ramirez --> Christopher Simmons --> Kathleen Schmidt
+
+
+Printing All Persons' Name, Age, Occupation, Friends ...
+Name: Aaron Jones
+Age: 44
+Occupation: Network engineer
+Aaron Jones's Friends: 
+	Lindsay Davis
+	Daniel Taylor
+	Johnny Brown
+	Daniel Barber
+	Morgan Townsend
+	Michelle English
+	Kelly Gonzales
+	James Robles
+	Frank Henderson
+	Christopher Stewart
+------------------------------------------
+Name: Adam Parks
+Age: 88
+Occupation: Building surveyor
+Adam Parks's Friends: 
+	Mason Davis
+	Elizabeth Leon PhD
+	Brianna English
+	Charles Rollins
+	Brandy Miller
+	Morgan Townsend
+	Amanda Green
+	William Richardson
+	Jesse Sherman
+	Linda Weber
+	Christopher Simmons
+------------------------------------------
+Name: Alice Todd
+Age: 20
+Occupation: Theme park manager
+Alice Todd's Friends: 
+	Paula Cabrera
+	Morgan Townsend
+	Gail Rodriguez
+	Sara Howell
+	Craig Carrillo
+------------------------------------------
+Name: Amanda Green
+Age: 37
+Occupation: Television floor manager
+Amanda Green's Friends: 
+	Lori Rowe
+	Adam Parks
+	Mr. Vincent Jackson 
+	Patricia Kramer
+	Kevin Young
+	Gail Rodriguez
+	Michelle English
+	Jamie Price
+	Sara Howell
+	Jennifer Hoffman
+	Clarence Martinez
+	Rebecca Ramirez
+------------------------------------------
+Name: Amanda Hawkins
+Age: 44
+Occupation: Chartered legal executive (Eng
+Amanda Hawkins's Friends: 
+	Mary Cochran
+	Sandra Perez
+	Christine Paul
+	Tammy Thompson
+	Rachel Hernandez
+	Nathaniel Harris
+	Amy Pearson
+	Ryan Padilla
+	Clarence Martinez
+	Mary Duke
+	Christopher Simmons
+------------------------------------------
+Name: Amy Pearson
+Age: 54
+Occupation: Housing manager/officer
+Amy Pearson's Friends: 
+	Lindsay Davis
+	Daniel Taylor
+	Amanda Hawkins
+	Frank Taylor
+	Lisa Lopez
+	David Clarke
+	Morgan Townsend
+	Justin Reid
+	Sarah Morris
+	Christopher Fox
+	Veronica Hart
+	Fred Harris
+------------------------------------------
+Name: Anna Hooper
+Age: 77
+Occupation: Lecturer higher education
+Anna Hooper's Friends: 
+	Mason Davis
+	Charles Rollins
+	Kenneth Brewer
+	Erica Harper
+	Sarah Davis
+	Sarah Martin
+	Nathaniel Harris
+	Emma Wagner
+	Jamie Price
+	Sara Howell
+	Christopher Jackson
+	Fred Harris
+	Michael James
+------------------------------------------
+Name: Annette Wagner
+Age: 47
+Occupation: Landscape architect
+Annette Wagner's Friends: 
+	Lori Rowe
+	Johnny Brown
+	Paula Cabrera
+	Chelsea Combs
+	Gail Rodriguez
+	Tara White
+	Steven West
+	Ryan Padilla
+	Linda Weber
+	Craig Carrillo
+	Christopher Stewart
+	Emily Myers
+------------------------------------------
+Name: Benjamin Palmer
+Age: 90
+Occupation: Private music teacher
+Benjamin Palmer's Friends: 
+	Lindsay Davis
+	Julie Long
+	Paula Cabrera
+	Kendra Brown
+	Sarah Davis
+	Samuel Reed
+	Virginia Morales
+	James Nichols
+	Emma Wagner
+	Jennifer Hoffman
+	Craig Carrillo
+------------------------------------------
+Name: Brandon Davis
+Age: 83
+Occupation: Landscape architect
+Brandon Davis's Friends: 
+	Kendra Benson
+	Daniel Taylor
+	Kenneth Brewer
+	Julie Long
+	Erica Harper
+	Kathy Brown
+	David Clarke
+	Sarah Davis
+	Rachel Hernandez
+	Joshua Tran
+	Samantha Mclaughlin
+	Jennifer Hoffman
+	Craig Carrillo
+------------------------------------------
+Name: Brandy Miller
+Age: 50
+Occupation: Human resources officer
+Brandy Miller's Friends: 
+	Sandra Perez
+	Erica Harper
+	Paula Cabrera
+	Lisa Lopez
+	Adam Parks
+	Justin Reid
+	Rachel Hernandez
+	Sarah Martin
+	Christopher Jackson
+	Clarence Martinez
+	Christopher Stewart
+	Emily Myers
+------------------------------------------
+Name: Brett Gallagher
+Age: 62
+Occupation: Ophthalmologist
+Brett Gallagher's Friends: 
+	Carol Flores
+	Kendra Brown
+	Chelsea Combs
+	Kevin Young
+	Manuel Donovan
+	Rachel Hernandez
+	Sarah Martin
+	Jennifer Hoffman
+	Ryan Padilla
+	Linda Weber
+	Mary Duke
+	Edward Fisher
+	Chase Miller
+	Todd Campbell
+------------------------------------------
+Name: Brianna English
+Age: 65
+Occupation: Copy
+Brianna English's Friends: 
+	Elizabeth Leon PhD
+	Daniel Taylor
+	Kendra Brown
+	Adam Parks
+	Sarah Davis
+	James Nichols
+	Vincent Miller
+	Frank Henderson
+	Clarence Martinez
+------------------------------------------
+Name: Carol Flores
+Age: 38
+Occupation: Conservation officer historic 
+Carol Flores's Friends: 
+	Mason Davis
+	Mary Cochran
+	Daniel Barber
+	Brett Gallagher
+	Sarah Davis
+	Samuel Reed
+	Elizabeth Long
+	Veronica Hart
+	Emily Myers
+	James Russell
+------------------------------------------
+Name: Charles Rollins
+Age: 60
+Occupation: Exhibitions officer museum/ga 
+Charles Rollins's Friends: 
+	Elizabeth Leon PhD
+	Kenneth Brewer
+	Ryan Campbell
+	Adam Parks
+	Kevin Young
+	Virginia Morales
+	Michelle English
+	James Nichols
+	James Robles
+	Anna Hooper
+	Michael James
+------------------------------------------
+Name: Chase Miller
+Age: 64
+Occupation: Community pharmacist
+Chase Miller's Friends: 
+	Sandra Perez
+	Brett Gallagher
+	Sarah Ward
+	Nathaniel Harris
+	James Robles
+	Christopher Fox
+	Rebecca Ramirez
+	Craig Carrillo
+	Mary Duke
+	Edward Fisher
+	Emily Myers
+------------------------------------------
+Name: Chelsea Combs
+Age: 75
+Occupation: Furniture designer
+Chelsea Combs's Friends: 
+	Mary Cochran
+	Ryan Webb
+	Brett Gallagher
+	Sarah Davis
+	Virginia Morales
+	Rachel Hernandez
+	Tara White
+	Michelle English
+	William Richardson
+	Annette Wagner
+	Michael James
+------------------------------------------
+Name: Christine Paul
+Age: 74
+Occupation: Geologist wellsite
+Christine Paul's Friends: 
+	Daniel Taylor
+	Johnny Brown
+	Amanda Hawkins
+	Nathaniel Harris
+	James Nichols
+	Samantha Mclaughlin
+	Christopher Jackson
+	Jesse Sherman
+	Craig Carrillo
+------------------------------------------
+Name: Christine Rojas
+Age: 32
+Occupation: Engineer biomedical
+Christine Rojas's Friends: 
+	David Clarke
+	Justin Reid
+	Samuel Reed
+	Nathaniel Harris
+	Craig Carrillo
+	Christopher Simmons
+------------------------------------------
+Name: Christopher Fox
+Age: 24
+Occupation: Civil Service fast streamer
+Christopher Fox's Friends: 
+	Joshua Wyatt
+	Daniel Taylor
+	Sarah Davis
+	Justin Reid
+	Amy Pearson
+	Mary Duke
+	Chase Miller
+	Ryan Crawford
+------------------------------------------
+Name: Christopher Jackson 
+Age: 28
+Occupation: Cartographer
+Christopher Jackson 's Friends: 
+	Ryan Webb
+	Kathy Brown
+	Brandy Miller
+	Christine Paul
+	Sarah Davis
+	Tammie Adams
+	Morgan Townsend
+	Patricia Kramer
+	Steven West
+	Jennifer Hoffman
+	Ryan Padilla
+	Linda Weber
+	Anna Hooper
+	Veronica Hart
+------------------------------------------
+Name: Christopher Simmons 
+Age: 70
+Occupation: Associate Professor
+Christopher Simmons 's Friends: 
+	Johnny Brown
+	Amanda Hawkins
+	Sandra Perez
+	Michael Hall
+	Ryan Webb
+	Christine Rojas
+	Adam Parks
+	Samuel Reed
+	Tara White
+	Clarence Martinez
+	Edward Fisher
+	Todd Campbell
+------------------------------------------
+Name: Christopher Stewart 
+Age: 61
+Occupation: Structural engineer
+Christopher Stewart 's Friends: 
+	Kendra Benson
+	Lindsay Davis
+	Aaron Jones
+	Brandy Miller
+	Tara White
+	William Richardson
+	Sarah Morris
+	Kelly Gonzales
+	Annette Wagner
+------------------------------------------
+Name: Clarence Martinez
+Age: 59
+Occupation: Insurance claims handler
+Clarence Martinez's Friends: 
+	Elizabeth Leon PhD
+	Brianna English
+	Amanda Hawkins
+	Paula Cabrera
+	Brandy Miller
+	Kevin Young
+	Nathaniel Harris
+	Michelle English
+	Amanda Green
+	Kelly Gonzales
+	Christopher Simmons
+------------------------------------------
+Name: Craig Carrillo
+Age: 80
+Occupation: Clinical research associate
+Craig Carrillo's Friends: 
+	Mason Davis
+	Alice Todd
+	Erica Harper
+	Christine Rojas
+	Christine Paul
+	Patricia Kramer
+	Tammy Thompson
+	Eric Cook
+	Samuel Reed
+	Rachel Hernandez
+	Samantha Mclaughlin
+	Benjamin Palmer
+	Mike Willis
+	Annette Wagner
+	Jesse Sherman
+	Frank Henderson
+	Linda Weber
+	Brandon Davis
+	Chase Miller
+------------------------------------------
+Name: Daniel Barber
+Age: 72
+Occupation: Ambulance person
+Daniel Barber's Friends: 
+	Mary Cochran
+	Carol Flores
+	Aaron Jones
+	Lisa Lopez
+	Frank Henderson
+------------------------------------------
+Name: Daniel Taylor
+Age: 77
+Occupation: Land
+Daniel Taylor's Friends: 
+	Kendra Benson
+	Brianna English
+	Lori Rowe
+	Aaron Jones
+	Christine Paul
+	Manuel Donovan
+	James Nichols
+	Amy Pearson
+	Paul Dudley
+	Christopher Fox
+	Brandon Davis
+	Todd Campbell
+------------------------------------------
+Name: David Clarke
+Age: 34
+Occupation: Broadcast engineer
+David Clarke's Friends: 
+	John Armstrong
+	Sandra Perez
+	Christine Rojas
+	Mr. Vincent Jackson 
+	Samantha Mclaughlin
+	Jamie Price
+	Amy Pearson
+	Mary Smith
+	Brandon Davis
+------------------------------------------
+Name: Edward Fisher
+Age: 90
+Occupation: Ceramics designer
+Edward Fisher's Friends: 
+	Kendra Benson
+	Joshua Wyatt
+	Kenneth Brewer
+	Paula Cabrera
+	Brett Gallagher
+	Mr. Vincent Jackson 
+	Sarah Martin
+	Sara Howell
+	Chase Miller
+	Christopher Simmons
+	Emily Myers
+------------------------------------------
+Name: Elizabeth Leon PhD
+Age: 53
+Occupation: Physicist medical
+Elizabeth Leon PhD's Friends: 
+	Mason Davis
+	Joshua Wyatt
+	Brianna English
+	Charles Rollins
+	Michael Hall
+	Kathy Brown
+	Adam Parks
+	Kevin Young
+	Jennifer Hoffman
+	Clarence Martinez
+	Emily Myers
+------------------------------------------
+Name: Elizabeth Long
+Age: 66
+Occupation: Freight forwarder
+Elizabeth Long's Friends: 
+	Carol Flores
+	Eric Cook
+	Justin Reid
+	Gail Rodriguez
+	Tara White
+	Linda Weber
+	Rebecca Ramirez
+------------------------------------------
+Name: Emily Myers
+Age: 63
+Occupation: Technical author
+Emily Myers's Friends: 
+	Elizabeth Leon PhD
+	Carol Flores
+	Brandy Miller
+	Sarah Davis
+	Morgan Townsend
+	Annette Wagner
+	Jesse Sherman
+	Mary Duke
+	Edward Fisher
+	Chase Miller
+------------------------------------------
+Name: Emma Wagner
+Age: 27
+Occupation: Art therapist
+Emma Wagner's Friends: 
+	Mary Cochran
+	Lisa Lopez
+	Patricia Kramer
+	Michelle English
+	Benjamin Palmer
+	Paul Dudley
+	Anna Hooper
+------------------------------------------
+Name: Eric Cook
+Age: 37
+Occupation: Manufacturing engineer
+Eric Cook's Friends: 
+	Lori Rowe
+	Gail Rodriguez
+	Sara Howell
+	William Richardson
+	Elizabeth Long
+	Jesse Sherman
+	Frank Henderson
+	Veronica Hart
+	Craig Carrillo
+------------------------------------------
+Name: Erica Harper
+Age: 55
+Occupation: Geochemist
+Erica Harper's Friends: 
+	Kenneth Brewer
+	Julie Long
+	Brandy Miller
+	Patricia Kramer
+	Anna Hooper
+	Brandon Davis
+	Craig Carrillo
+------------------------------------------
+Name: Frank Henderson
+Age: 33
+Occupation: Tax inspector
+Frank Henderson's Friends: 
+	Brianna English
+	Aaron Jones
+	Johnny Brown
+	Daniel Barber
+	Lisa Lopez
+	Tammie Adams
+	Patricia Kramer
+	Eric Cook
+	Michelle English
+	Samantha Mclaughlin
+	Jennifer Hoffman
+	Craig Carrillo
+	Ryan Crawford
+------------------------------------------
+Name: Frank Taylor
+Age: 70
+Occupation: Trading standards officer
+Frank Taylor's Friends: 
+	Mason Davis
+	Ryan Campbell
+	Sarah Ward
+	Amy Pearson
+	Jesse Sherman
+	Mary Smith
+------------------------------------------
+Name: Fred Harris
+Age: 41
+Occupation: Location manager
+Fred Harris's Friends: 
+	Mary Cochran
+	Kendra Brown
+	Morgan Townsend
+	Justin Reid
+	Rachel Hernandez
+	William Richardson
+	Amy Pearson
+	Jennifer Hoffman
+	Anna Hooper
+------------------------------------------
+Name: Gail Rodriguez
+Age: 71
+Occupation: Therapist nutritional
+Gail Rodriguez's Friends: 
+	Alice Todd
+	Morgan Townsend
+	Eric Cook
+	Sarah Ward
+	Amanda Green
+	Annette Wagner
+	Elizabeth Long
+------------------------------------------
+Name: James Nichols
+Age: 24
+Occupation: Environmental manager
+James Nichols's Friends: 
+	Brianna English
+	Charles Rollins
+	Daniel Taylor
+	Christine Paul
+	Samantha Mclaughlin
+	Benjamin Palmer
+	Sara Howell
+	Sarah Morris
+------------------------------------------
+Name: James Robles
+Age: 68
+Occupation: Fashion designer
+James Robles's Friends: 
+	Charles Rollins
+	Aaron Jones
+	Johnny Brown
+	Ryan Campbell
+	Rachel Hernandez
+	Michelle English
+	Linda Weber
+	Chase Miller
+------------------------------------------
+Name: James Russell
+Age: 29
+Occupation: Private music teacher
+James Russell's Friends: 
+	Carol Flores
+	Ryan Campbell
+	Ryan Webb
+	Sara Howell
+	Paul Dudley
+	Veronica Hart
+	Kathleen Schmidt
+------------------------------------------
+Name: Jamie Price
+Age: 67
+Occupation: Emergency planning/management 
+Jamie Price's Friends: 
+	Julie Long
+	David Clarke
+	Sarah Davis
+	Morgan Townsend
+	Amanda Green
+	Jennifer Hoffman
+	Anna Hooper
+	Veronica Hart
+------------------------------------------
+Name: Jennifer Hoffman
+Age: 65
+Occupation: Magazine features editor
+Jennifer Hoffman's Friends: 
+	Elizabeth Leon PhD
+	Joshua Wyatt
+	Brett Gallagher
+	Kathy Brown
+	Samuel Reed
+	Benjamin Palmer
+	Jamie Price
+	Amanda Green
+	Christopher Jackson
+	Frank Henderson
+	Brandon Davis
+	Fred Harris
+------------------------------------------
+Name: Jesse Sherman
+Age: 58
+Occupation: Civil engineer contracting
+Jesse Sherman's Friends: 
+	Kendra Benson
+	Joshua Wyatt
+	Kenneth Brewer
+	Frank Taylor
+	Adam Parks
+	Christine Paul
+	Patricia Kramer
+	Eric Cook
+	Ryan Padilla
+	Craig Carrillo
+	Emily Myers
+------------------------------------------
+Name: John Armstrong
+Age: 30
+Occupation: Web designer
+John Armstrong's Friends: 
+	Mason Davis
+	Ryan Webb
+	David Clarke
+	Paul Dudley
+------------------------------------------
+Name: Johnny Brown
+Age: 58
+Occupation: Technical sales engineer
+Johnny Brown's Friends: 
+	Joshua Wyatt
+	Aaron Jones
+	Julie Long
+	Christine Paul
+	Kelly Gonzales
+	Paul Dudley
+	James Robles
+	Annette Wagner
+	Frank Henderson
+	Christopher Simmons
+	Todd Campbell
+------------------------------------------
+Name: Joshua Tran
+Age: 68
+Occupation: Health visitor
+Joshua Tran's Friends: 
+	Paula Cabrera
+	Tara White
+	Sara Howell
+	Sarah Morris
+	Paul Dudley
+	Brandon Davis
+------------------------------------------
+Name: Joshua Wyatt
+Age: 31
+Occupation: Pensions consultant
+Joshua Wyatt's Friends: 
+	Kendra Benson
+	Elizabeth Leon PhD
+	Lori Rowe
+	Kenneth Brewer
+	Johnny Brown
+	Samuel Reed
+	Mike Willis
+	Kelly Gonzales
+	Jennifer Hoffman
+	Jesse Sherman
+	Christopher Fox
+	Edward Fisher
+------------------------------------------
+Name: Julie Long
+Age: 84
+Occupation: Police officer
+Julie Long's Friends: 
+	Lindsay Davis
+	Mary Cochran
+	Johnny Brown
+	Erica Harper
+	Morgan Townsend
+	Sarah Martin
+	Benjamin Palmer
+	Jamie Price
+	Kelly Gonzales
+	Brandon Davis
+	Michael James
+------------------------------------------
+Name: Justin Reid
+Age: 50
+Occupation: Medical laboratory scientific 
+Justin Reid's Friends: 
+	Lindsay Davis
+	Brandy Miller
+	Christine Rojas
+	Patricia Kramer
+	Sarah Ward
+	Sara Howell
+	Amy Pearson
+	Elizabeth Long
+	Christopher Fox
+	Mary Smith
+	Fred Harris
+	Michael James
+	Kathleen Schmidt
+------------------------------------------
+Name: Kathleen Schmidt
+Age: 26
+Occupation: Tour manager
+Kathleen Schmidt's Friends: 
+	Kevin Young
+	Justin Reid
+	Sarah Martin
+	Mike Willis
+	Sarah Morris
+	James Russell
+	Todd Campbell
+------------------------------------------
+Name: Kathy Brown
+Age: 36
+Occupation: Embryologist clinical
+Kathy Brown's Friends: 
+	Elizabeth Leon PhD
+	Kendra Brown
+	Sarah Morris
+	Jennifer Hoffman
+	Christopher Jackson
+	Rebecca Ramirez
+	Brandon Davis
+------------------------------------------
+Name: Kelly Gonzales
+Age: 64
+Occupation: Geoscientist
+Kelly Gonzales's Friends: 
+	Kendra Benson
+	Joshua Wyatt
+	Aaron Jones
+	Johnny Brown
+	Julie Long
+	Kendra Brown
+	Morgan Townsend
+	Clarence Martinez
+	Christopher Stewart
+	Todd Campbell
+------------------------------------------
+Name: Kendra Benson
+Age: 66
+Occupation: Agricultural consultant
+Kendra Benson's Friends: 
+	Mason Davis
+	Joshua Wyatt
+	Daniel Taylor
+	Lori Rowe
+	Paula Cabrera
+	Sarah Davis
+	Virginia Morales
+	Rachel Hernandez
+	Tara White
+	Mike Willis
+	Kelly Gonzales
+	Jesse Sherman
+	Brandon Davis
+	Christopher Stewart
+	Edward Fisher
+------------------------------------------
+Name: Kendra Brown
+Age: 83
+Occupation: Engineer electrical
+Kendra Brown's Friends: 
+	Brianna English
+	Brett Gallagher
+	Kathy Brown
+	Patricia Kramer
+	Samuel Reed
+	Benjamin Palmer
+	Kelly Gonzales
+	Fred Harris
+------------------------------------------
+Name: Kenneth Brewer
+Age: 41
+Occupation: Information officer
+Kenneth Brewer's Friends: 
+	Joshua Wyatt
+	Charles Rollins
+	Erica Harper
+	Sarah Ward
+	Michelle English
+	Paul Dudley
+	Jesse Sherman
+	Anna Hooper
+	Brandon Davis
+	Edward Fisher
+------------------------------------------
+Name: Kevin Young
+Age: 37
+Occupation: Translator
+Kevin Young's Friends: 
+	Lindsay Davis
+	Elizabeth Leon PhD
+	Charles Rollins
+	Brett Gallagher
+	Amanda Green
+	Paul Dudley
+	Clarence Martinez
+	Ryan Crawford
+	Kathleen Schmidt
+------------------------------------------
+Name: Linda Weber
+Age: 42
+Occupation: Art gallery manager
+Linda Weber's Friends: 
+	Michael Hall
+	Paula Cabrera
+	Brett Gallagher
+	Adam Parks
+	William Richardson
+	Vincent Miller
+	Christopher Jackson
+	James Robles
+	Annette Wagner
+	Elizabeth Long
+	Veronica Hart
+	Craig Carrillo
+------------------------------------------
+Name: Lindsay Davis
+Age: 26
+Occupation: Educational psychologist
+Lindsay Davis's Friends: 
+	Aaron Jones
+	Julie Long
+	Kevin Young
+	Justin Reid
+	Steven West
+	Benjamin Palmer
+	Amy Pearson
+	Paul Dudley
+	Ryan Padilla
+	Christopher Stewart
+------------------------------------------
+Name: Lisa Lopez
+Age: 62
+Occupation: IT sales professional
+Lisa Lopez's Friends: 
+	Daniel Barber
+	Brandy Miller
+	Rachel Hernandez
+	Emma Wagner
+	Amy Pearson
+	Frank Henderson
+------------------------------------------
+Name: Lori Rowe
+Age: 42
+Occupation: Orthoptist
+Lori Rowe's Friends: 
+	Kendra Benson
+	Joshua Wyatt
+	Daniel Taylor
+	Eric Cook
+	Amanda Green
+	Annette Wagner
+	Mary Smith
+	Michael James
+------------------------------------------
+Name: Manuel Donovan
+Age: 66
+Occupation: Conservation officer nature
+Manuel Donovan's Friends: 
+	Daniel Taylor
+	Brett Gallagher
+	Mike Willis
+------------------------------------------
+Name: Mary Cochran
+Age: 46
+Occupation: Warden/ranger
+Mary Cochran's Friends: 
+	Carol Flores
+	Amanda Hawkins
+	Julie Long
+	Daniel Barber
+	Chelsea Combs
+	Virginia Morales
+	Emma Wagner
+	Samantha Mclaughlin
+	Sarah Morris
+	Mary Smith
+	Fred Harris
+------------------------------------------
+Name: Mary Duke
+Age: 22
+Occupation: Photographer
+Mary Duke's Friends: 
+	Amanda Hawkins
+	Michael Hall
+	Brett Gallagher
+	Tara White
+	Michelle English
+	Sarah Morris
+	Christopher Fox
+	Chase Miller
+	Emily Myers
+------------------------------------------
+Name: Mary Smith
+Age: 74
+Occupation: Geneticist molecular
+Mary Smith's Friends: 
+	Mary Cochran
+	Lori Rowe
+	Paula Cabrera
+	Frank Taylor
+	David Clarke
+	Justin Reid
+	Sara Howell
+	Rebecca Ramirez
+------------------------------------------
+Name: Mason Davis
+Age: 50
+Occupation: Photographer
+Mason Davis's Friends: 
+	Kendra Benson
+	John Armstrong
+	Elizabeth Leon PhD
+	Carol Flores
+	Frank Taylor
+	Adam Parks
+	Steven West
+	Nathaniel Harris
+	Sara Howell
+	Anna Hooper
+	Craig Carrillo
+------------------------------------------
+Name: Michael Hall
+Age: 65
+Occupation: General practice doctor
+Michael Hall's Friends: 
+	Elizabeth Leon PhD
+	Sandra Perez
+	Linda Weber
+	Mary Duke
+	Christopher Simmons
+------------------------------------------
+Name: Michael James
+Age: 63
+Occupation: Set designer
+Michael James's Friends: 
+	Charles Rollins
+	Lori Rowe
+	Julie Long
+	Mr. Vincent Jackson 
+	Chelsea Combs
+	Justin Reid
+	Anna Hooper
+------------------------------------------
+Name: Michelle English
+Age: 51
+Occupation: Horticultural consultant
+Michelle English's Friends: 
+	Charles Rollins
+	Kenneth Brewer
+	Aaron Jones
+	Chelsea Combs
+	Morgan Townsend
+	Virginia Morales
+	Emma Wagner
+	Amanda Green
+	William Richardson
+	James Robles
+	Frank Henderson
+	Clarence Martinez
+	Mary Duke
+------------------------------------------
+Name: Mike Willis
+Age: 63
+Occupation: Trade mark attorney
+Mike Willis's Friends: 
+	Kendra Benson
+	Joshua Wyatt
+	Morgan Townsend
+	Patricia Kramer
+	Samuel Reed
+	Manuel Donovan
+	Craig Carrillo
+	Kathleen Schmidt
+------------------------------------------
+Name: Morgan Townsend
+Age: 58
+Occupation: Journalist broadcasting
+Morgan Townsend's Friends: 
+	Aaron Jones
+	Julie Long
+	Sandra Perez
+	Alice Todd
+	Adam Parks
+	Mr. Vincent Jackson 
+	Gail Rodriguez
+	Sarah Martin
+	Steven West
+	Nathaniel Harris
+	Michelle English
+	Jamie Price
+	Mike Willis
+	Kelly Gonzales
+	Amy Pearson
+	Paul Dudley
+	Christopher Jackson
+	Veronica Hart
+	Fred Harris
+	Emily Myers
+	Todd Campbell
+------------------------------------------
+Name: Mr. Vincent Jackson 
+Age: 40
+Occupation: Surveyor commercial/residenti 
+Mr. Vincent Jackson 's Friends: 
+	David Clarke
+	Tammie Adams
+	Morgan Townsend
+	Sarah Ward
+	Tara White
+	Amanda Green
+	Vincent Miller
+	Edward Fisher
+	Michael James
+	Todd Campbell
+------------------------------------------
+Name: Nathaniel Harris
+Age: 69
+Occupation: Environmental manager
+Nathaniel Harris's Friends: 
+	Mason Davis
+	Amanda Hawkins
+	Paula Cabrera
+	Christine Rojas
+	Christine Paul
+	Morgan Townsend
+	Steven West
+	Clarence Martinez
+	Anna Hooper
+	Rebecca Ramirez
+	Chase Miller
+------------------------------------------
+Name: Patricia Kramer
+Age: 30
+Occupation: Industrial/product designer
+Patricia Kramer's Friends: 
+	Erica Harper
+	Kendra Brown
+	Justin Reid
+	Steven West
+	Emma Wagner
+	Samantha Mclaughlin
+	Amanda Green
+	Mike Willis
+	Christopher Jackson
+	Jesse Sherman
+	Frank Henderson
+	Rebecca Ramirez
+	Craig Carrillo
+------------------------------------------
+Name: Paul Dudley
+Age: 19
+Occupation: Investment banker operational 
+Paul Dudley's Friends: 
+	Lindsay Davis
+	John Armstrong
+	Daniel Taylor
+	Kenneth Brewer
+	Johnny Brown
+	Sarah Davis
+	Morgan Townsend
+	Kevin Young
+	Sarah Ward
+	Emma Wagner
+	Joshua Tran
+	Sarah Morris
+	Veronica Hart
+	James Russell
+	Todd Campbell
+------------------------------------------
+Name: Paula Cabrera
+Age: 47
+Occupation: Accommodation manager
+Paula Cabrera's Friends: 
+	Kendra Benson
+	Alice Todd
+	Brandy Miller
+	Virginia Morales
+	Sarah Martin
+	Tara White
+	Nathaniel Harris
+	Joshua Tran
+	Benjamin Palmer
+	Annette Wagner
+	Mary Smith
+	Linda Weber
+	Clarence Martinez
+	Edward Fisher
+------------------------------------------
+Name: Rachel Hernandez
+Age: 75
+Occupation: Government social research off
+Rachel Hernandez's Friends: 
+	Kendra Benson
+	Amanda Hawkins
+	Lisa Lopez
+	Brett Gallagher
+	Brandy Miller
+	Sarah Davis
+	Chelsea Combs
+	Steven West
+	James Robles
+	Brandon Davis
+	Fred Harris
+	Craig Carrillo
+------------------------------------------
+Name: Rebecca Ramirez
+Age: 51
+Occupation: Ophthalmologist
+Rebecca Ramirez's Friends: 
+	Kathy Brown
+	Patricia Kramer
+	Nathaniel Harris
+	Amanda Green
+	Elizabeth Long
+	Mary Smith
+	Chase Miller
+	Todd Campbell
+------------------------------------------
+Name: Ryan Campbell
+Age: 76
+Occupation: Chief Technology Officer
+Ryan Campbell's Friends: 
+	Charles Rollins
+	Frank Taylor
+	Virginia Morales
+	Sarah Morris
+	James Robles
+	Ryan Crawford
+	James Russell
+------------------------------------------
+Name: Ryan Crawford
+Age: 56
+Occupation: Teacher special educational n 
+Ryan Crawford's Friends: 
+	Ryan Campbell
+	Kevin Young
+	Christopher Fox
+	Frank Henderson
+------------------------------------------
+Name: Ryan Padilla
+Age: 48
+Occupation: Barrister
+Ryan Padilla's Friends: 
+	Lindsay Davis
+	Amanda Hawkins
+	Brett Gallagher
+	Tara White
+	Steven West
+	William Richardson
+	Christopher Jackson
+	Annette Wagner
+	Jesse Sherman
+	Veronica Hart
+------------------------------------------
+Name: Ryan Webb
+Age: 63
+Occupation: Secretary/administrator
+Ryan Webb's Friends: 
+	John Armstrong
+	Sarah Davis
+	Tammie Adams
+	Chelsea Combs
+	Christopher Jackson
+	Christopher Simmons
+	James Russell
+------------------------------------------
+Name: Samantha Mclaughlin 
+Age: 87
+Occupation: Teacher English as a foreign
+Samantha Mclaughlin 's Friends: 
+	Mary Cochran
+	David Clarke
+	Christine Paul
+	Patricia Kramer
+	Steven West
+	James Nichols
+	Sarah Morris
+	Frank Henderson
+	Brandon Davis
+	Craig Carrillo
+------------------------------------------
+Name: Samuel Reed
+Age: 54
+Occupation: Music therapist
+Samuel Reed's Friends: 
+	Joshua Wyatt
+	Carol Flores
+	Kendra Brown
+	Christine Rojas
+	Sarah Davis
+	Sarah Ward
+	Benjamin Palmer
+	Mike Willis
+	Jennifer Hoffman
+	Craig Carrillo
+	Christopher Simmons
+------------------------------------------
+Name: Sandra Perez
+Age: 60
+Occupation: Surveyor rural practice
+Sandra Perez's Friends: 
+	Amanda Hawkins
+	Michael Hall
+	Brandy Miller
+	David Clarke
+	Sarah Davis
+	Morgan Townsend
+	Chase Miller
+	Christopher Simmons
+	Todd Campbell
+------------------------------------------
+Name: Sara Howell
+Age: 60
+Occupation: Press photographer
+Sara Howell's Friends: 
+	Mason Davis
+	Alice Todd
+	Eric Cook
+	Justin Reid
+	James Nichols
+	Joshua Tran
+	Amanda Green
+	Mary Smith
+	Anna Hooper
+	Edward Fisher
+	James Russell
+------------------------------------------
+Name: Sarah Davis
+Age: 44
+Occupation: Analytical chemist
+Sarah Davis's Friends: 
+	Kendra Benson
+	Brianna English
+	Carol Flores
+	Sandra Perez
+	Ryan Webb
+	Chelsea Combs
+	Samuel Reed
+	Virginia Morales
+	Rachel Hernandez
+	Tara White
+	Steven West
+	Benjamin Palmer
+	Jamie Price
+	William Richardson
+	Paul Dudley
+	Christopher Jackson
+	Christopher Fox
+	Anna Hooper
+	Brandon Davis
+	Emily Myers
+------------------------------------------
+Name: Sarah Martin
+Age: 79
+Occupation: Optometrist
+Sarah Martin's Friends: 
+	Julie Long
+	Paula Cabrera
+	Brett Gallagher
+	Brandy Miller
+	Morgan Townsend
+	Anna Hooper
+	Edward Fisher
+	Kathleen Schmidt
+------------------------------------------
+Name: Sarah Morris
+Age: 86
+Occupation: Mudlogger
+Sarah Morris's Friends: 
+	Mary Cochran
+	Ryan Campbell
+	Kathy Brown
+	Tara White
+	James Nichols
+	Joshua Tran
+	Samantha Mclaughlin
+	Amy Pearson
+	Paul Dudley
+	Christopher Stewart
+	Mary Duke
+	Kathleen Schmidt
+	Todd Campbell
+------------------------------------------
+Name: Sarah Ward
+Age: 30
+Occupation: Merchant navy officer
+Sarah Ward's Friends: 
+	Kenneth Brewer
+	Frank Taylor
+	Mr. Vincent Jackson 
+	Justin Reid
+	Samuel Reed
+	Gail Rodriguez
+	Virginia Morales
+	Paul Dudley
+	Chase Miller
+------------------------------------------
+Name: Steven West
+Age: 80
+Occupation: Personal assistant
+Steven West's Friends: 
+	Mason Davis
+	Lindsay Davis
+	Sarah Davis
+	Morgan Townsend
+	Patricia Kramer
+	Rachel Hernandez
+	Nathaniel Harris
+	Samantha Mclaughlin
+	Ryan Padilla
+	Christopher Jackson
+	Annette Wagner
+------------------------------------------
+Name: Tammie Adams
+Age: 39
+Occupation: Aeronautical engineer
+Tammie Adams's Friends: 
+	Ryan Webb
+	Mr. Vincent Jackson 
+	Christopher Jackson
+	Frank Henderson
+------------------------------------------
+Name: Tammy Thompson
+Age: 22
+Occupation: Health physicist
+Tammy Thompson's Friends: 
+	Amanda Hawkins
+	William Richardson
+	Veronica Hart
+	Craig Carrillo
+------------------------------------------
+Name: Tara White
+Age: 76
+Occupation: Journalist magazine
+Tara White's Friends: 
+	Kendra Benson
+	Paula Cabrera
+	Sarah Davis
+	Mr. Vincent Jackson 
+	Chelsea Combs
+	Joshua Tran
+	Sarah Morris
+	Ryan Padilla
+	Annette Wagner
+	Elizabeth Long
+	Christopher Stewart
+	Mary Duke
+	Christopher Simmons
+------------------------------------------
+Name: Todd Campbell
+Age: 23
+Occupation: Risk analyst
+Todd Campbell's Friends: 
+	Daniel Taylor
+	Johnny Brown
+	Sandra Perez
+	Brett Gallagher
+	Mr. Vincent Jackson 
+	Morgan Townsend
+	Sarah Morris
+	Kelly Gonzales
+	Paul Dudley
+	Rebecca Ramirez
+	Christopher Simmons
+	Kathleen Schmidt
+------------------------------------------
+Name: Veronica Hart
+Age: 86
+Occupation: Fashion designer
+Veronica Hart's Friends: 
+	Carol Flores
+	Morgan Townsend
+	Tammy Thompson
+	Eric Cook
+	Jamie Price
+	Amy Pearson
+	Vincent Miller
+	Paul Dudley
+	Ryan Padilla
+	Christopher Jackson
+	Linda Weber
+	James Russell
+------------------------------------------
+Name: Vincent Miller
+Age: 27
+Occupation: Engineer materials
+Vincent Miller's Friends: 
+	Brianna English
+	Mr. Vincent Jackson 
+	Linda Weber
+	Veronica Hart
+------------------------------------------
+Name: Virginia Morales
+Age: 76
+Occupation: Call centre manager
+Virginia Morales's Friends: 
+	Kendra Benson
+	Mary Cochran
+	Charles Rollins
+	Ryan Campbell
+	Paula Cabrera
+	Sarah Davis
+	Chelsea Combs
+	Sarah Ward
+	Michelle English
+	Benjamin Palmer
+------------------------------------------
+Name: William Richardson
+Age: 22
+Occupation: Surveyor hydrographic
+William Richardson's Friends: 
+	Adam Parks
+	Sarah Davis
+	Chelsea Combs
+	Tammy Thompson
+	Eric Cook
+	Michelle English
+	Ryan Padilla
+	Linda Weber
+	Fred Harris
+	Christopher Stewart
+------------------------------------------
+------------------------------------------
+
+Printing Name and Occupation from Eric Cook to Todd Campbell...
+Name: Eric Cook
+Occupation: Manufacturing engineer
+Name: Erica Harper
+Occupation: Geochemist
+Name: Frank Henderson
+Occupation: Tax inspector
+Name: Frank Taylor
+Occupation: Trading standards officer
+Name: Fred Harris
+Occupation: Location manager
+Name: Gail Rodriguez
+Occupation: Therapist nutritional
+Name: James Nichols
+Occupation: Environmental manager
+Name: James Robles
+Occupation: Fashion designer
+Name: James Russell
+Occupation: Private music teacher
+Name: Jamie Price
+Occupation: Emergency planning/management 
+Name: Jennifer Hoffman
+Occupation: Magazine features editor
+Name: Jesse Sherman
+Occupation: Civil engineer contracting
+Name: John Armstrong
+Occupation: Web designer
+Name: Johnny Brown
+Occupation: Technical sales engineer
+Name: Joshua Tran
+Occupation: Health visitor
+Name: Joshua Wyatt
+Occupation: Pensions consultant
+Name: Julie Long
+Occupation: Police officer
+Name: Justin Reid
+Occupation: Medical laboratory scientific 
+Name: Kathleen Schmidt
+Occupation: Tour manager
+Name: Kathy Brown
+Occupation: Embryologist clinical
+Name: Kelly Gonzales
+Occupation: Geoscientist
+Name: Kendra Benson
+Occupation: Agricultural consultant
+Name: Kendra Brown
+Occupation: Engineer electrical
+Name: Kenneth Brewer
+Occupation: Information officer
+Name: Kevin Young
+Occupation: Translator
+Name: Linda Weber
+Occupation: Art gallery manager
+Name: Lindsay Davis
+Occupation: Educational psychologist
+Name: Lisa Lopez
+Occupation: IT sales professional
+Name: Lori Rowe
+Occupation: Orthoptist
+Name: Manuel Donovan
+Occupation: Conservation officer nature
+Name: Mary Cochran
+Occupation: Warden/ranger
+Name: Mary Duke
+Occupation: Photographer
+Name: Mary Smith
+Occupation: Geneticist molecular
+Name: Mason Davis
+Occupation: Photographer
+Name: Michael Hall
+Occupation: General practice doctor
+Name: Michael James
+Occupation: Set designer
+Name: Michelle English
+Occupation: Horticultural consultant
+Name: Mike Willis
+Occupation: Trade mark attorney
+Name: Morgan Townsend
+Occupation: Journalist broadcasting
+Name: Mr. Vincent Jackson 
+Occupation: Surveyor commercial/residenti 
+Name: Nathaniel Harris
+Occupation: Environmental manager
+Name: Patricia Kramer
+Occupation: Industrial/product designer
+Name: Paul Dudley
+Occupation: Investment banker operational 
+Name: Paula Cabrera
+Occupation: Accommodation manager
+Name: Rachel Hernandez
+Occupation: Government social research off
+Name: Rebecca Ramirez
+Occupation: Ophthalmologist
+Name: Ryan Campbell
+Occupation: Chief Technology Officer
+Name: Ryan Crawford
+Occupation: Teacher special educational n 
+Name: Ryan Padilla
+Occupation: Barrister
+Name: Ryan Webb
+Occupation: Secretary/administrator
+Name: Samantha Mclaughlin 
+Occupation: Teacher English as a foreign
+Name: Samuel Reed
+Occupation: Music therapist
+Name: Sandra Perez
+Occupation: Surveyor rural practice
+Name: Sara Howell
+Occupation: Press photographer
+Name: Sarah Davis
+Occupation: Analytical chemist
+Name: Sarah Martin
+Occupation: Optometrist
+Name: Sarah Morris
+Occupation: Mudlogger
+Name: Sarah Ward
+Occupation: Merchant navy officer
+Name: Steven West
+Occupation: Personal assistant
+Name: Tammie Adams
+Occupation: Aeronautical engineer
+Name: Tammy Thompson
+Occupation: Health physicist
+Name: Tara White
+Occupation: Journalist magazine
+Name: Todd Campbell
+Occupation: Risk analyst
+------------------------------------------
+------------------------------------------
+
+Printing Each of Eric Cook's Friend's Name and Occupation ...
+Name: Eric Cook
+Occupation: Manufacturing engineer
+------------------------------------------
+Eric Cook's friends:
+
+Name: Lori Rowe
+Occupation: Orthoptist
+Name: Gail Rodriguez
+Occupation: Therapist nutritional
+Name: Sara Howell
+Occupation: Press photographer
+Name: William Richardson
+Occupation: Surveyor hydrographic
+Name: Elizabeth Long
+Occupation: Freight forwarder
+Name: Jesse Sherman
+Occupation: Civil engineer contracting
+Name: Frank Henderson
+Occupation: Tax inspector
+Name: Veronica Hart
+Occupation: Fashion designer
+Name: Craig Carrillo
+Occupation: Clinical research associate
+------------------------------------------
+------------------------------------------
+
+Printing Each of Todd Campbell's Friend's Name and Occupation ...
+Name: Todd Campbell
+Occupation: Risk analyst
+------------------------------------------
+Todd Campbell's friends:
+
+Name: Daniel Taylor
+Occupation: Land
+Name: Johnny Brown
+Occupation: Technical sales engineer
+Name: Sandra Perez
+Occupation: Surveyor rural practice
+Name: Brett Gallagher
+Occupation: Ophthalmologist
+Name: Mr. Vincent Jackson 
+Occupation: Surveyor commercial/residenti 
+Name: Morgan Townsend
+Occupation: Journalist broadcasting
+Name: Sarah Morris
+Occupation: Mudlogger
+Name: Kelly Gonzales
+Occupation: Geoscientist
+Name: Paul Dudley
+Occupation: Investment banker operational 
+Name: Rebecca Ramirez
+Occupation: Ophthalmologist
+Name: Christopher Simmons 
+Occupation: Associate Professor
+Name: Kathleen Schmidt
+Occupation: Tour manager
+------------------------------------------
+------------------------------------------
+
+Adding Todd Campbell to Eric Cook's Friend's List ...
+Checking if Eric Cook and Todd Campbell have Updated Friend Lists ... 
+Printing Each of Eric Cook's Friend's Name and Occupation ...
+Name: Eric Cook
+Occupation: Manufacturing engineer
+------------------------------------------
+Eric Cook's friends:
+
+Name: Lori Rowe
+Occupation: Orthoptist
+Name: Gail Rodriguez
+Occupation: Therapist nutritional
+Name: Sara Howell
+Occupation: Press photographer
+Name: William Richardson
+Occupation: Surveyor hydrographic
+Name: Elizabeth Long
+Occupation: Freight forwarder
+Name: Jesse Sherman
+Occupation: Civil engineer contracting
+Name: Frank Henderson
+Occupation: Tax inspector
+Name: Veronica Hart
+Occupation: Fashion designer
+Name: Craig Carrillo
+Occupation: Clinical research associate
+Name: Todd Campbell
+Occupation: Risk analyst
+------------------------------------------
+------------------------------------------
+
+Printing Each of Todd Campbell's Friend's Name and Occupation ...
+Name: Todd Campbell
+Occupation: Risk analyst
+------------------------------------------
+Todd Campbell's friends:
+
+Name: Daniel Taylor
+Occupation: Land
+Name: Johnny Brown
+Occupation: Technical sales engineer
+Name: Sandra Perez
+Occupation: Surveyor rural practice
+Name: Brett Gallagher
+Occupation: Ophthalmologist
+Name: Mr. Vincent Jackson 
+Occupation: Surveyor commercial/residenti 
+Name: Morgan Townsend
+Occupation: Journalist broadcasting
+Name: Sarah Morris
+Occupation: Mudlogger
+Name: Kelly Gonzales
+Occupation: Geoscientist
+Name: Paul Dudley
+Occupation: Investment banker operational 
+Name: Rebecca Ramirez
+Occupation: Ophthalmologist
+Name: Christopher Simmons 
+Occupation: Associate Professor
+Name: Kathleen Schmidt
+Occupation: Tour manager
+Name: Eric Cook
+Occupation: Manufacturing engineer
+------------------------------------------
+------------------------------------------
+

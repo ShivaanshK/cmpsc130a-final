@@ -1,19 +1,26 @@
 #include "RBGraph.h"
 
-/*
- * RBGraph() 
- * ~RBGraph()
- * clear()
- * insert()
- * read_file()
- * write_file()
- * ginsert()
- * ginsert_friend()
- * print_graph()
- * friendship_query()
- *
- *
- *
+/* VIM NAVIGATION PLEASE DON'T DELT MERCI BEAUCOUP
+ * RBGraph() :27
+ * ~RBGraph() :34
+ * clear() :42
+ * insert() :54
+ * read_file() :106
+ * write_file() :188
+ * ginsert() :198
+ * ginsert_friend() :218
+ * print_graph() :241
+ * friendship_query() :265
+ * find() :291
+ * range_query() :316
+ * find_range() :334
+ * successor() :352
+ * print_all() :405
+ * print() :413
+ * binsert() :436
+ * fix() :459
+ * lrotate() :551
+ * rrotate() :609
  */
 
 /* CONSTRUCTOR */
