@@ -2,7 +2,8 @@
 all:main
 
 main:
-	g++ -std=c++11 RBGraph.cpp main.cpp -o main
+	g++ -std=c++11 -g RBGraph.cpp main.cpp -o main
 
 clean:
-	/bin/rm -rf *.o main
+	/bin/rm -rf *.o main directory.txt
+
