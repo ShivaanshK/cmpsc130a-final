@@ -14,6 +14,8 @@ typedef uint32_t i; // graph and file indices
 /* IMPLEMENTATION OF A GRAPH NODE
  * A BUNCH OF THESE MAKE UP THE FRIENDSHIP GRAPH */
 typedef std::pair<std::string,std::vector<std::string>> graphnode;
+// discontinued linked list and made a 2-D vector adjacency list
+// with permission from Sean, per Piazza Post @282
 
 // colour of rb-tree nodes
 const static bool red = true;

@@ -35,7 +35,7 @@ RBGraph::~RBGraph()
 {
     if (root != nullptr)
         clear(root);
-    graph.clear();
+    //  graph.clear(); // not really necessary as vector clears itself
 }
 
 /* DESTRUCTOR HELPER */
