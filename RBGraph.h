@@ -1,5 +1,6 @@
 #ifndef RBGRAPH_H
 #define RBGRAPH_H
+
 #include <iostream>
 #include <string>
 #include <vector>
@@ -12,41 +13,48 @@ const static bool red = true;
 const static bool black = false;
 
 /* IMPLEMENTATION OF RED-BLACK NODE */
-class RB_Node
+class RBNode
 {
 public:
     std::string name;
     bool color;
     i filePointer;
-    RB_Node *left;
-    RB_Node *right;
-    RB_Node *parent;
+    RBNode *left;
+    RBNode *right;
+    RBNode *parent;
 
     // constructor
-    RB_Node(std::string n = std::string{}, bool c = red, i fp = 0, RB_Node *l = nullptr, RB_Node *r = nullptr, RB_Node *p = nullptr)
+    RBNode(std::string n = std::string{}, bool c = red, i fp = 0, RBNode *l = nullptr, RBNode *r = nullptr, RBNode *p = nullptr)
         : name{n}, color{c}, filePointer{fp}, left{l}, right{r}, parent{p} {}
 
     // by default nodes are red; this is okay, because the 'null' nodes are considered black
 };
 
-//Implementation of Node in linked list of graph
-struct Linked_List_Node
+/* IMPLEMENTATION OF FRIENDS LIST */
+class LinkedListNode
 {
-    Linked_List_Node() { next = nullptr; };
+public:
     std::string name;
-    Linked_List_Node *next;
+    LinkedListNode *next;
+    
+    // constructor
+    LinkedListNode(std::string n = std::string{}, LinkedListNode *lln = nullptr)
+        : name{n}, next{lln} {}
 };
 
-//Implementation of Node in Graph
-struct Graphnode
+/* IMPLEMENTATION OF FRIENDS LISTS */
+class GraphNode
 {
-    Graphnode() { list = nullptr; };
+public:
     std::string name;
-    Linked_List_Node *list;
+    LinkedListNode *list;
     i filePointer;
+    
+    GraphNode(std::string n = std::string{}, LinkedListNode *l = nullptr, i fp = 0)
+        : name{n}, list{l}, filePointer{fp} {}
 };
 
-//Class which implements a RB Tree and a Graph
+/* Red-Black Tree and Friendship Graph */
 class RBGraph
 {
 public:
@@ -73,31 +81,30 @@ public:
     void insert(const std::string &s);
 
 private:
-    RB_Node *root;                // RBT
-    std::vector<Graphnode> graph; // Graph
-
-    i elements; // number of nodes
+    RBNode *root;                   // RBT
+    std::vector<GraphNode> graph;   // Graph
+    i elements;                     // number of nodes
 
     // destructor helper
-    void clear(RB_Node *n);
+    void clear(RBNode *n);
 
     // print helper
-    void print(RB_Node *n);
+    void print(RBNode *n);
 
     // find (exact or range), query helpers
-    RB_Node *find(const std::string &name, RB_Node *n) const;
-    std::vector<RB_Node *> find_range(const std::string &name1, const std::string &name2) const;
-    RB_Node *successor(const std::string &name) const;
+    RBNode *find(const std::string &name, RBNode *n) const;
+    std::vector<RBNode *> find_range(const std::string &name1, const std::string &name2) const;
+    RBNode *successor(const std::string &name) const;
 
     // insert helper (BST portion)
-    RB_Node *binsert(RB_Node *root, RB_Node *entry);
+    RBNode *binsert(RBNode *root, RBNode *entry);
 
     // insert helper (fix portion)
-    void fix(RB_Node *&r, RB_Node *&entry);
+    void fix(RBNode *&r, RBNode *&entry);
 
     // rotations (fix helper)
-    void lrotate(RB_Node *&r, RB_Node *&entry);
-    void rrotate(RB_Node *&r, RB_Node *&entry);
+    void lrotate(RBNode *&r, RBNode *&entry);
+    void rrotate(RBNode *&r, RBNode *&entry);
 };
 
 #endif
