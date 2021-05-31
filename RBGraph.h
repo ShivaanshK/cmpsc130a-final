@@ -84,7 +84,9 @@ private:
     // find (exact or range), query helpers
     rbnode *find(const std::string &name, rbnode *n) const;
     std::vector<rbnode *> find_range(const std::string &name1, const std::string &name2) const;
+    std::pair<rbnode *, rbnode *> rfind(const std::string &name, rbnode *n) const;
     rbnode *successor(const std::string &name) const;
+    rbnode *predecessor(const std::string &name) const;
 
     // insert helper (BST portion)
     rbnode *binsert(rbnode *root, rbnode *entry);

@@ -32,6 +32,11 @@ int main(int argc, char *argv[])
     
     rbgraph.range_query(person1, person2);
 
+    std::string person3 = "Adelheid Arete";
+    std::string person4 = "Eric Eszterhazy"; // should print from Alice to Eric Cook
+    std::cout << "Printing Name and Occupation from " << person3 << " to " << person4 << "..." << std::endl;
+
+    rbgraph.range_query(person3, person4);
 
     std::cout << "Printing Each of " << person1 << "'s Friend's Name and Occupation ..." << std::endl;
     rbgraph.friendship_query(person1);

@@ -1,26 +1,27 @@
 #include "RBGraph.h"
 
 /* VIM NAVIGATION PLEASE DON'T DELT MERCI BEAUCOUP
- * RBGraph() :27
- * ~RBGraph() :34
- * clear() :42
- * insert() :54
- * read_file() :106
- * write_file() :188
- * ginsert() :198
- * ginsert_friend() :218
- * print_graph() :241
- * friendship_query() :265
- * find() :291
- * range_query() :316
- * find_range() :334
- * successor() :352
- * print_all() :405
- * print() :413
- * binsert() :436
- * fix() :459
- * lrotate() :551
- * rrotate() :609
+ * RBGraph() :28
+ * ~RBGraph() :35
+ * clear() :43
+ * insert() :55
+ * read_file() :107
+ * write_file() :189
+ * ginsert() :199
+ * ginsert_friend() :219
+ * print_graph() :242
+ * friendship_query() :266
+ * find() :292
+ * rfind() :
+ * range_query() :
+ * find_range() :
+ * successor() :
+ * print_all() :
+ * print() :
+ * binsert() :
+ * fix() :
+ * lrotate() :
+ * rrotate() :
  */
 
 /* CONSTRUCTOR */
@@ -287,7 +288,7 @@ void RBGraph::friendship_query(const std::string &name) const
     return;
 }
 
-/* FIND AN RB-NODE, BST SEARCH */
+/* RECURSIVE FIND AN RB-NODE, BST SEARCH */
 rbnode *RBGraph::find(const std::string &name, rbnode *n) const
 {
     if (n)
@@ -333,19 +334,83 @@ void RBGraph::range_query(const std::string &name1, const std::string &name2) co
 /* FIND A RANGE OF RB-NODES */
 std::vector<rbnode *> RBGraph::find_range(const std::string &name1, const std::string &name2) const
 {
-    std::vector<rbnode *> names;
-    names.push_back(find(name1, root));
-    rbnode *current = successor(name1);
+    rbnode *leftbound = find(name1,root);
+    rbnode *rightbound = find(name2,root);
 
-    while (current->name != name2)
+    if (!leftbound) {
+        // find the first name after the leftbound
+        leftbound = rfind(name1,root).first;
+    }
+    if (!rightbound) {
+        // find the first name before the rightbound
+        rightbound = rfind(name2,root).second;
+    }
+
+    std::vector<rbnode *> names;
+    names.push_back(leftbound);
+    rbnode *current = successor(leftbound->name);
+
+    while (current->name != rightbound->name)
     {
         names.push_back(current);
         current = successor(current->name);
     }
 
-    names.push_back(find(name2, root));
+    names.push_back(rightbound);
 
     return names;
+}
+
+/* ITERATIVE FIND FOR RANGE-BASED RB-NODE, BST SEARCH 
+ * (called for range query, considers case when name1 or name2 is not in the RBT)
+ */
+std::pair<rbnode *, rbnode *> RBGraph::rfind(const std::string &name, rbnode *n) const
+{
+    std::string penultimate;
+    if (!n)
+    {
+        return std::make_pair(nullptr, nullptr);
+    }
+    else 
+    {
+        while (n) {
+            if (n->name < name) 
+            {
+                penultimate = n->name;
+                n = n->right;
+            }
+            else if (n->name > name)
+            {
+                penultimate = n->name;
+                n = n->left;
+            }
+            else
+            {
+                return std::make_pair(n,n);
+            }
+        }
+        // while loop terminates, in other words element not found
+        // take the value of the parent of this node, and find successor and predecessor
+        // it is likely that these are not the tightest bounds, so we check this
+        std::pair<rbnode *, rbnode *> bounds = std::make_pair(successor(penultimate),predecessor(penultimate));
+        rbnode *tightleft = predecessor(bounds.first->name);
+        rbnode *tightright = successor(bounds.second->name);
+        while (tightleft && tightleft->name > name) {
+            bounds.first = tightleft;
+            tightleft = predecessor(bounds.first->name);
+        }
+        while (tightright && tightright->name < name) {
+            bounds.second = tightright;
+            tightright = successor(bounds.second->name);
+        }
+
+
+        return bounds;
+
+        // we use either of these values for the range query when
+        // the queried name is not found, and we need the next largest
+        // or the next smallest name
+    }
 }
 
 /* FIND THE RB-NODE WITH NAME DIRECTLY SUCCEEDING THE GIVEN NAME */
@@ -401,7 +466,60 @@ rbnode *RBGraph::successor(const std::string &name) const
     }
 }
 
-/* PRINT ALL rbnodeS (INORDER TRAVERSAL) */
+/* FIND THE RB-NODE WITH NAME DIRECTLY PRECEDING THE GIVEN NAME */
+rbnode *RBGraph::predecessor(const std::string &name) const
+{
+    rbnode *current = find(name, root);
+    if (current)
+    {
+        // if this rbnode has a left subtree
+        if (current->left)
+        {
+            current = current->left;
+            while (current->right != nullptr)
+            {
+                current = current->right;
+            }
+        }
+        // if this rbnode has no left subtree,
+        // starting from root to that rbnode, the last right rbnode
+        // passed before arriving at the rbnode is the successor
+        else
+        {
+            rbnode *lastright = root;
+            while (lastright->name != name)
+            {
+                if (lastright->name > name)
+                {
+                    lastright = lastright->left;
+                }
+                else
+                {
+                    current = lastright;
+                    lastright = lastright->right;
+                }
+            }
+        }
+        // if the last left rbnode passed is this rbnode
+        // this rbnode has no successor
+        if (current->name == name)
+        {
+            return nullptr;
+        }
+        else
+        {
+            return current;
+        }
+    }
+    else
+    {
+        // root was nullptr OR
+        // name is not in rb-tree
+        return nullptr;
+    }
+}
+
+/* PRINT ALL RB-NODES IN ASCENDING ORDER */
 void RBGraph::print_all() const
 {
     print(root);
