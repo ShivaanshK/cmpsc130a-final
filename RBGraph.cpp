@@ -95,6 +95,8 @@ void RBGraph::friendship_query(const std::string &name) const
         }
         std::cout << "------------------------------------------\n";
         std::cout << "------------------------------------------\n\n";
+    } else {
+        std::cout << "User Not Found." << std::endl << std::endl;
     }
     return;
 }
@@ -102,7 +104,7 @@ void RBGraph::friendship_query(const std::string &name) const
 /* PRINT A RANGE OF RB-NODES */
 void RBGraph::range_query(const std::string &name1, const std::string &name2) const
 {
-    std::vector<rbnode *> queries = find_range(name1, name2);
+    std::vector<rbnode *> queries = find_range((name1 < name2) ? name1 : name2, (name1 > name2) ? name1 : name2);
     for (auto& query : queries)
     {
         exact_query(query->name);
