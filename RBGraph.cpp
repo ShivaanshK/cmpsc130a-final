@@ -1,28 +1,30 @@
 #include "RBGraph.h"
 
 /* VIM NAVIGATION PLEASE DON'T DELT MERCI BEAUCOUP
- * RBGraph() :28
- * ~RBGraph() :35
- * clear() :43
- * insert() :55
- * read_file() :107
- * write_file() :189
- * ginsert() :199
- * ginsert_friend() :219
- * print_graph() :242
- * friendship_query() :266
- * find() :292
- * rfind() :
- * range_query() :
- * find_range() :
- * successor() :
- * print_all() :
- * print() :
- * binsert() :
- * fix() :
- * lrotate() :
- * rrotate() :
- */
+ * RBGraph() :30
+ * ~RBGraph() :37
+ * clear() :45
+ * exact_query() :58
+ * friendship_query() :80
+ * range_query() :103
+ * print_all() :117
+ * print() :125
+ * print_graph() :148
+ * insert() :167
+ * ginsert() :221
+ * ginsert_friend() :241
+ * read_file() :264
+ * write_file() :346
+ * 
+ * find() :360
+ * rfind() :386
+ * find_range() :440
+ * successor() :470
+ * predecessor() :523
+ * binsert() :576
+ * fix() :599
+ * lrotate() :691
+ * rrotate() :749                                   */
 
 /* CONSTRUCTOR */
 RBGraph::RBGraph()
@@ -47,6 +49,116 @@ void RBGraph::clear(rbnode *n)
         clear(n->left);
         clear(n->right);
         delete n;
+    }
+    return;
+}
+
+/* EXACT QUERY
+ * returns name's data (but not friends data) */
+void RBGraph::exact_query(const std::string &name) const
+{
+    rbnode *query = find(name, root); // temp node for person and their friends
+    if (query)
+    {
+        std::vector<std::string> nao = read_file(query->pointer); // temp var for printing name/occupation
+        std::cout << "Name: " << nao[0] << std::endl;
+        std::cout << "Age: " << nao[1] << std::endl;
+        std::cout << "Occupation: " << nao[2] << std::endl;
+        std::cout << "------------------------------------------\n\n";
+    }
+    else
+    {
+        std::cout << "User Not Found." << std::endl;
+    }
+    return;
+}
+
+/* FRIENDSHIP QUERY
+ * (traverse the rb-tree to find the person of interest)
+ * (then, get that person's friendslist from the graph)
+ * (then, print the name and occupation of each friend) */
+void RBGraph::friendship_query(const std::string &name) const
+{
+    rbnode *query = find(name, root); // temp node for person and their friends
+    if (query)
+    {
+        // query the person's information
+        exact_query(name);
+        std::cout << name << "'s friends:\n\n";
+
+        // go to the friendship graph and find the person
+        i i_person = query->pointer;
+        // iterate thru each friend in the person's friend list and 
+        // query each friend's information
+        for (auto& friendname : graph[i_person].second) {
+            exact_query(friendname);
+        }
+        std::cout << "------------------------------------------\n";
+        std::cout << "------------------------------------------\n\n";
+    }
+    return;
+}
+
+/* PRINT A RANGE OF RB-NODES */
+void RBGraph::range_query(const std::string &name1, const std::string &name2) const
+{
+    std::vector<rbnode *> queries = find_range(name1, name2);
+    for (auto& query : queries)
+    {
+        exact_query(query->name);
+    }
+    std::cout << "------------------------------------------\n";
+    std::cout << "------------------------------------------\n\n";
+    return;
+}
+
+
+/* PRINT ALL RB-NODES IN ASCENDING ORDER */
+void RBGraph::print_all() const
+{
+    print(root);
+    std::cout << "------------------------------------------\n\n";
+    return;
+}
+
+/* RECURSIVE PRINT */
+void RBGraph::print(rbnode *node) const
+{
+    if (node)
+    {
+        print(node->left);
+
+        std::vector<std::string> nao = read_file(node->pointer);
+        std::cout << "Name: " << nao[0] << std::endl
+                  << "Age: " << nao[1] << std::endl
+                  << "Occupation: " << nao[2] << std::endl
+                  << nao[0] << "'s Friends: " << std::endl;
+        std::vector<std::string> names = graph[node->pointer].second; // friend list
+        for (auto& name : names) {
+            std::cout << "\t" << name << std::endl;
+        }
+        std::cout << "------------------------------------------\n";
+
+        print(node->right);
+    }
+    return;
+}
+       
+/* PRINT THE ENTIRE FRIENDSHIP-GRAPH */
+void RBGraph::print_graph() const
+{
+    std::cout << "Graph:" << std::endl;
+    i gindex = 0;
+    while(gindex < elements) {
+        for (auto& gnode : graph) {
+            std::cout << gindex << ": " << gnode.first; // first = username
+            for (auto& friendname : gnode.second) { // second = friend list
+                std::cout << " --> " << friendname;
+            }
+            std::cout << "\n";
+            ++gindex;
+        }
+        std::cout << "\n\n";
     }
     return;
 }
@@ -100,6 +212,51 @@ void RBGraph::insert(const std::string &s)
         // to both the file index and the graph index
     }
 
+    return;
+}
+
+/* INSERT NEW PERSON VIA THE GRAPH
+ * (first inserts to the RB-Tree, to store file/graph index)
+ * (then writes to the file, then makes a new graphnode) */
+void RBGraph::ginsert(const std::string &name, const std::string &age, const std::string &occupation)
+{
+    if (!find(name,root)) 
+    {
+        rbnode *entry = new rbnode{name, red, elements};
+        root = binsert(root, entry);
+        fix(root, entry);
+        write_file(name, age, occupation);
+
+        // for a insert-by-graph, new user has no friends
+        std::vector<std::string> friends;
+        graphnode gentry(name,friends);
+        graph.push_back(gentry);
+        elements++;
+    }
+    return;
+}
+
+/* INSERT A FRIEND TO AN EXISTING PERSON IN THE GRAPH 
+ * (adding a friend goes both ways, so both graphnodes must be updated) */
+void RBGraph::ginsert_friend(const std::string &p1, const std::string &p2)
+{
+    rbnode *p1_node = find(p1,root);
+    rbnode *p2_node = find(p2,root);
+    if (p1_node && p2_node) // terminates if one or both persons are not in the network
+    {
+        // check if p2 is already p1's friend
+        // the friend list is the graphnode's second element
+        i i_p1 = p1_node->pointer;
+        i i_p2 = p2_node->pointer;
+        for (auto gnit = graph[i_p1].second.begin(); gnit != graph[i_p1].second.end(); ++gnit) {
+            // if p2 is already in p1, then p1 is also already in p2
+            if (*(gnit) == p2) {
+                return;
+            }
+        }
+        graph[i_p1].second.push_back(p2);
+        graph[i_p2].second.push_back(p1);
+    }
     return;
 }
 
@@ -193,100 +350,11 @@ void RBGraph::write_file(const std::string &name, const std::string &age, const 
     output.close();
 }
 
-/* INSERT NEW PERSON VIA THE GRAPH
- * (first inserts to the RB-Tree, to store file/graph index)
- * (then writes to the file, then makes a new graphnode) */
-void RBGraph::ginsert(const std::string &name, const std::string &age, const std::string &occupation)
-{
-    if (!find(name,root)) 
-    {
-        rbnode *entry = new rbnode{name, red, elements};
-        root = binsert(root, entry);
-        fix(root, entry);
-        write_file(name, age, occupation);
-
-        // for a insert-by-graph, new user has no friends
-        std::vector<std::string> friends;
-        graphnode gentry(name,friends);
-        graph.push_back(gentry);
-        elements++;
-    }
-    return;
-}
-
-/* INSERT A FRIEND TO AN EXISTING PERSON IN THE GRAPH 
- * (adding a friend goes both ways, so both graphnodes must be updated) */
-void RBGraph::ginsert_friend(const std::string &p1, const std::string &p2)
-{
-    rbnode *p1_node = find(p1,root);
-    rbnode *p2_node = find(p2,root);
-    if (p1_node && p2_node) // terminates if one or both persons are not in the network
-    {
-        // check if p2 is already p1's friend
-        // the friend list is the graphnode's second element
-        i i_p1 = p1_node->pointer;
-        i i_p2 = p2_node->pointer;
-        for (auto gnit = graph[i_p1].second.begin(); gnit != graph[i_p1].second.end(); ++gnit) {
-            // if p2 is already in p1, then p1 is also already in p2
-            if (*(gnit) == p2) {
-                return;
-            }
-        }
-        graph[i_p1].second.push_back(p2);
-        graph[i_p2].second.push_back(p1);
-    }
-    return;
-}
-
-/* PRINT THE ENTIRE FRIENDSHIP-GRAPH */
-void RBGraph::print_graph() const
-{
-    std::cout << "Graph:" << std::endl;
-    i gindex = 0;
-    while(gindex < elements) {
-        for (auto& gnode : graph) {
-            std::cout << gindex << ": " << gnode.first; // first = username
-            for (auto& friendname : gnode.second) { // second = friend list
-                std::cout << " --> " << friendname;
-            }
-            std::cout << "\n";
-            ++gindex;
-        }
-        std::cout << "\n\n";
-    }
-    return;
-}
-
-//RB Tree Functions:
-
-/* FRIENDSHIP QUERY
- * (traverse the rb-tree to find the person of interest)
- * (then, get that person's friendslist from the graph)
- * (then, print the name and occupation of each friend) */
-void RBGraph::friendship_query(const std::string &name) const
-{
-    rbnode *query = find(name, root); // temp node for person and their friends
-    if (query)
-    {
-        i i_person = query->pointer;
-        std::vector<std::string> nao = read_file(i_person); // temp var for printing name/occupation
-        std::cout << "Name: " << nao[0] << std::endl;
-        std::cout << "Occupation: " << nao[2] << std::endl;
-        std::cout << "------------------------------------------\n";
-        std::cout << nao[0] << "'s friends:\n\n";
-    
-        // get friend list and start printing each friend's name and occupation
-        for (auto& friendname : graph[i_person].second) {
-            query = find(friendname, root); // find friend
-            nao = read_file(query->pointer); // read friend's info from file
-            std::cout << "Name: " << nao[0] << std::endl;
-            std::cout << "Occupation: " << nao[2] << std::endl;
-        }
-        std::cout << "------------------------------------------\n";
-        std::cout << "------------------------------------------\n\n";
-    }
-    return;
-}
+/*
+ * ------------------------------
+ * PRIVATE FUNCTIONS
+ * ------------------------------
+ */
 
 /* RECURSIVE FIND AN RB-NODE, BST SEARCH */
 rbnode *RBGraph::find(const std::string &name, rbnode *n) const
@@ -313,22 +381,59 @@ rbnode *RBGraph::find(const std::string &name, rbnode *n) const
     }
 }
 
-/* PRINT A RANGE OF RB-NODES */
-void RBGraph::range_query(const std::string &name1, const std::string &name2) const
+/* ITERATIVE FIND FOR RANGE-BASED RB-NODE, BST SEARCH 
+ * (called for range query, considers case when name1 or name2 is not in the RBT) */
+std::pair<rbnode *, rbnode *> RBGraph::rfind(const std::string &name, rbnode *n) const
 {
-    std::vector<rbnode *> queries = find_range(name1, name2);
-    i i_person = 0;
-    std::vector<std::string> nao;
-    for (auto& query : queries)
+    std::string penultimate;
+    if (!n)
     {
-        i_person = query->pointer;
-        nao = read_file(i_person); // temp var for printing name/occupation
-        std::cout << "Name: " << nao[0] << std::endl;
-        std::cout << "Occupation: " << nao[2] << std::endl;
+        return std::make_pair(nullptr, nullptr);
     }
-    std::cout << "------------------------------------------\n";
-    std::cout << "------------------------------------------\n\n";
-    return;
+    else 
+    {
+        while (n) {
+            if (n->name < name) 
+            {
+                penultimate = n->name;
+                n = n->right;
+            }
+            else if (n->name > name)
+            {
+                penultimate = n->name;
+                n = n->left;
+            }
+            else
+            {
+                return std::make_pair(n,n);
+            }
+        }
+        // while loop terminates, in other words element not found
+        // take the value of the parent of this node, and find successor and predecessor
+        // it is likely that these are not the tightest bounds, so we check this
+        std::pair<rbnode *, rbnode *> bounds = std::make_pair(successor(penultimate),predecessor(penultimate));
+        if (bounds.first)
+        {
+            rbnode *tightleft = predecessor(bounds.first->name);
+            while (tightleft && tightleft->name > name) {
+                bounds.first = tightleft;
+                tightleft = predecessor(bounds.first->name);
+            }
+        }
+        if (bounds.second)
+        {
+            rbnode *tightright = successor(bounds.second->name);
+            while (tightright && tightright->name < name) {
+                bounds.second = tightright;
+                tightright = successor(bounds.second->name);
+            }
+        }
+        
+        return bounds;
+        // we use either of these values for the range query when
+        // the queried name is not found, and we need the next largest
+        // or the next smallest name
+    }
 }
 
 /* FIND A RANGE OF RB-NODES */
@@ -359,58 +464,6 @@ std::vector<rbnode *> RBGraph::find_range(const std::string &name1, const std::s
     names.push_back(rightbound);
 
     return names;
-}
-
-/* ITERATIVE FIND FOR RANGE-BASED RB-NODE, BST SEARCH 
- * (called for range query, considers case when name1 or name2 is not in the RBT)
- */
-std::pair<rbnode *, rbnode *> RBGraph::rfind(const std::string &name, rbnode *n) const
-{
-    std::string penultimate;
-    if (!n)
-    {
-        return std::make_pair(nullptr, nullptr);
-    }
-    else 
-    {
-        while (n) {
-            if (n->name < name) 
-            {
-                penultimate = n->name;
-                n = n->right;
-            }
-            else if (n->name > name)
-            {
-                penultimate = n->name;
-                n = n->left;
-            }
-            else
-            {
-                return std::make_pair(n,n);
-            }
-        }
-        // while loop terminates, in other words element not found
-        // take the value of the parent of this node, and find successor and predecessor
-        // it is likely that these are not the tightest bounds, so we check this
-        std::pair<rbnode *, rbnode *> bounds = std::make_pair(successor(penultimate),predecessor(penultimate));
-        rbnode *tightleft = predecessor(bounds.first->name);
-        rbnode *tightright = successor(bounds.second->name);
-        while (tightleft && tightleft->name > name) {
-            bounds.first = tightleft;
-            tightleft = predecessor(bounds.first->name);
-        }
-        while (tightright && tightright->name < name) {
-            bounds.second = tightright;
-            tightright = successor(bounds.second->name);
-        }
-
-
-        return bounds;
-
-        // we use either of these values for the range query when
-        // the queried name is not found, and we need the next largest
-        // or the next smallest name
-    }
 }
 
 /* FIND THE RB-NODE WITH NAME DIRECTLY SUCCEEDING THE GIVEN NAME */
@@ -517,37 +570,6 @@ rbnode *RBGraph::predecessor(const std::string &name) const
         // name is not in rb-tree
         return nullptr;
     }
-}
-
-/* PRINT ALL RB-NODES IN ASCENDING ORDER */
-void RBGraph::print_all() const
-{
-    print(root);
-    std::cout << "------------------------------------------\n\n";
-    return;
-}
-
-/* RECURSIVE PRINT */
-void RBGraph::print(rbnode *node) const
-{
-    if (node)
-    {
-        print(node->left);
-
-        std::vector<std::string> nao = read_file(node->pointer);
-        std::cout << "Name: " << nao[0] << std::endl
-                  << "Age: " << nao[1] << std::endl
-                  << "Occupation: " << nao[2] << std::endl
-                  << nao[0] << "'s Friends: " << std::endl;
-        std::vector<std::string> names = graph[node->pointer].second; // friend list
-        for (auto& name : names) {
-            std::cout << "\t" << name << std::endl;
-        }
-        std::cout << "------------------------------------------\n";
-
-        print(node->right);
-    }
-    return;
 }
 
 /* CALLED BY INSERT: PERFORMS BST INSERT */
@@ -779,4 +801,3 @@ void RBGraph::rrotate(rbnode *&r, rbnode *&entry)
 
     return;
 }
-

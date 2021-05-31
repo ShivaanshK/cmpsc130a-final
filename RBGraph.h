@@ -52,18 +52,18 @@ public:
     // destructor
     ~RBGraph();
 
-    // insert to RB-Tree and F-Graph
-    void insert(const std::string &s);
 
-    // query (friends, range, or all)
+    // query (exact, friends, range, or all) and bulk print
+    void exact_query(const std::string &name) const;
     void friendship_query(const std::string &name) const;
     void range_query(const std::string &name1, const std::string &name2) const;
     void print_all() const;
+    void print_graph() const;
 
-    // manipulate graph
+    // insert (initialisation, individual insert, friend insert)
+    void insert(const std::string &s);
     void ginsert(const std::string &name, const std::string &age, const std::string &occupation);
     void ginsert_friend(const std::string &p1, const std::string &p2);
-    void print_graph() const;
 
     // read/write to file
     std::vector<std::string> read_file(i &filePointer) const;
@@ -83,8 +83,8 @@ private:
 
     // find (exact or range), query helpers
     rbnode *find(const std::string &name, rbnode *n) const;
-    std::vector<rbnode *> find_range(const std::string &name1, const std::string &name2) const;
     std::pair<rbnode *, rbnode *> rfind(const std::string &name, rbnode *n) const;
+    std::vector<rbnode *> find_range(const std::string &name1, const std::string &name2) const;
     rbnode *successor(const std::string &name) const;
     rbnode *predecessor(const std::string &name) const;
 
