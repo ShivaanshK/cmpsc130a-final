@@ -13,7 +13,7 @@ typedef uint32_t i; // graph and file indices
 
 /* IMPLEMENTATION OF A GRAPH NODE
  * A BUNCH OF THESE MAKE UP THE FRIENDSHIP GRAPH */
-typedef std::pair<std::string,std::vector<std::string>> graphnode;
+typedef std::pair<std::string, std::vector<std::string> > graphnode;
 // discontinued linked list and made a 2-D vector adjacency list
 // with permission from Sean, per Piazza Post @282
 
@@ -52,7 +52,6 @@ public:
     // destructor
     ~RBGraph();
 
-
     // query (exact, friends, range, or all) and bulk print
     void exact_query(const std::string &name) const;
     void friendship_query(const std::string &name) const;
@@ -69,11 +68,10 @@ public:
     std::vector<std::string> read_file(i &filePointer) const;
     void write_file(const std::string &name, const std::string &age, const std::string &occupation) const;
 
-
 private:
-    rbnode *root;                   // RBT
-    std::vector<graphnode> graph;   // Graph
-    i elements;                     // number of nodes, file index, graph index
+    rbnode *root;                 // RBT
+    std::vector<graphnode> graph; // Graph
+    i elements;                   // number of nodes, file index, graph index
 
     // destructor helper
     void clear(rbnode *n);

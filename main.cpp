@@ -87,10 +87,12 @@ int main(int argc, char *argv[])
         if (input1 == "5")
         {
             rbgraph.print_all();
+            continue;
         }
         if (input1 == "6")
         {
             rbgraph.print_graph();
+            continue;
         }
         if (input1 == "7")
             break;
