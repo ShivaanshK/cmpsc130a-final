@@ -6,25 +6,25 @@
  * clear() :45
  * exact_query() :58
  * friendship_query() :80
- * range_query() :103
- * print_all() :117
- * print() :125
- * print_graph() :148
- * insert() :167
- * ginsert() :221
- * ginsert_friend() :241
- * read_file() :264
- * write_file() :346
+ * range_query() :109
+ * print_all() :122
+ * print() :130
+ * print_graph() :154
+ * insert() :176
+ * ginsert() :230
+ * ginsert_friend() :252
+ * read_file() :289
+ * write_file() :374
  * 
- * find() :360
- * rfind() :386
- * find_range() :440
- * successor() :470
- * predecessor() :523
- * binsert() :576
- * fix() :599
- * lrotate() :691
- * rrotate() :749                                   */
+ * find() :388
+ * rfind() :414
+ * find_range() :471
+ * successor() :503
+ * predecessor() :556
+ * binsert() :609
+ * fix() :632
+ * lrotate() :724
+ * rrotate() :782 */
 
 /* CONSTRUCTOR */
 RBGraph::RBGraph()
@@ -241,6 +241,8 @@ void RBGraph::ginsert(const std::string &name, const std::string &age, const std
         graphnode gentry(name, friends);
         graph.push_back(gentry);
         elements++;
+
+        std::cout << "Successfully inserted " << name << std::endl << std::endl;
     }
     return;
 }
@@ -267,7 +269,19 @@ void RBGraph::ginsert_friend(const std::string &p1, const std::string &p2)
         }
         graph[i_p1].second.push_back(p2);
         graph[i_p2].second.push_back(p1);
+
+        std::cout << "Successfully inserted friendship between " << p1 << " and " << p2 << std::endl;
     }
+
+    if (!p1_node)
+    {
+        std::cout << p1 << " is not in the network." << std::endl;
+    }
+    if (!p2_node)
+    {
+        std::cout << p2 << " is not in the network." << std::endl;
+    }
+    std::cout << std::endl;
     return;
 }
 

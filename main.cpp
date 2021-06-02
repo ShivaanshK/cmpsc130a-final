@@ -66,8 +66,6 @@ int main(int argc, char *argv[])
             std::getline(std::cin, input3);
             std::cout << std::endl;
             rbgraph.ginsert(input1, input2, input3);
-            std::cout << "Successfully inserted " << input1 << std::endl
-                      << std::endl;
             continue;
         }
         if (input1 == "4")
@@ -79,9 +77,6 @@ int main(int argc, char *argv[])
                 << "Enter name of second user: ";
             std::getline(std::cin, input2);
             rbgraph.ginsert_friend(input1, input2);
-            std::cout << std::endl
-                      << "Successfully inserted friendship between " << input1 << " and " << input2 << std::endl
-                      << std::endl;
             continue;
         }
         if (input1 == "5")
