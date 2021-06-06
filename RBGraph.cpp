@@ -720,117 +720,120 @@ void RBGraph::fix(rbnode *&r, rbnode *&entry)
     return;
 }
 
-/* ROTATE LEFT, PIVOT = ENTRY */
-void RBGraph::lrotate(rbnode *&r, rbnode *&entry)
+/* ROTATE LEFT */
+void RBGraph::lrotate(rbnode *&r, rbnode *&pivot)
 {
-    // 1) temporary pointer to entry's right child
-    rbnode *rc_entry = entry->right;
+    // 1) temporary pointer to pivot's right child
+    rbnode *rc_pivot = pivot->right;
 
-    // 2) set entry's right child to be entry's right child's left child
-    entry->right = rc_entry->left;
+    // 2) set pivot's right child to be pivot's right child's left child
+    pivot->right = rc_pivot->left;
 
-    // 2a) if that old right child's left child exists
-    if (rc_entry->left)
+    // 2a) if that old right child's left child exists then ORC's LC 
+    // needs to update its parent
+    if (rc_pivot->left)
     {
-        // set entry's old right child's left child's parent be entry
-        entry->right->parent = entry;
+        pivot->right->parent = pivot;
     }
 
-    // entry's old right child's parent is entry's parent
-    // 3) i.e. entry's old right child and entry now share the same parent
-    rc_entry->parent = entry->parent;
+    // 3) pivot's old right child's parent is pivot's parent
+    // i.e. pivot's old right child and pivot now share the same parent
+    rc_pivot->parent = pivot->parent;
 
-    // 4a) if their parent exists check whether entry is
+    // 4a) if their parent exists check whether pivot is
     // its parent's left or right child
-    if (entry->parent)
+    if (pivot->parent)
     {
-        if (entry == entry->parent->left)
+        if (pivot == pivot->parent->left)
         {
-            // 4aa) if entry is a left child
-            entry->parent->left = rc_entry;
-            // set the entry's parent's left child
+            // 4aa) if pivot is a left child
+            pivot->parent->left = rc_pivot;
+            // set the pivot's parent's left child
             // to be parent's grandchild instead
-            // (entry's old right child)
+            // (pivot's old right child)
         }
         else
         {
-            // 4ab) if entry is a right child
-            entry->parent->right = rc_entry;
-            // set the entry's parent's right child
+            // 4ab) if pivot is a right child
+            pivot->parent->right = rc_pivot;
+            // set the pivot's parent's right child
             // to be parent's grandchild instead
-            // (entry's old right child)
+            // (pivot's old right child)
         }
     }
     // 4b) if their parent does not exist (their parent is a nullptr)
-    // set the root to be entry's old right child
-    else if (!entry->parent)
+    // that means pivot's parent (and rc pivot) is the root
+    // set the root to be pivot's old right child
+    else if (!pivot->parent)
     {
-        r = rc_entry;
+        r = rc_pivot;
     }
 
-    // 5) set entry's old right child's new left child to be entry
-    // instead of being its old left child (which is now entry's
+    // 5) set pivot's old right child's new left child to be pivot
+    // instead of being its old left child (which is now pivot's
     // right child)
-    rc_entry->left = entry;
-    // 6) set entry's parent be entry's old right child
-    entry->parent = rc_entry;
+    rc_pivot->left = pivot;
+    // 6) set pivot's parent be pivot's old right child
+    pivot->parent = rc_pivot;
 
     return;
 }
 
-/* ROTATE RIGHT, PIVOT = ENTRY */
-void RBGraph::rrotate(rbnode *&r, rbnode *&entry)
+/* ROTATE RIGHT */
+void RBGraph::rrotate(rbnode *&r, rbnode *&pivot)
 {
-    // 1) temporary pointer to entry's left child
-    rbnode *lc_entry = entry->left;
+    // 1) temporary pointer to pivot's left child
+    rbnode *lc_pivot = pivot->left;
 
-    // 2) set entry's left child to be entry's left child's right child
-    entry->left = lc_entry->right;
+    // 2) set pivot's left child to be pivot's left child's right child
+    pivot->left = lc_pivot->right;
 
-    // 2a) if that old left child's right child exists
-    if (lc_entry->right)
+    // 2a) if that old left child's right child exists then OLC's RC
+    // needs to update its parent
+    if (lc_pivot->right)
     {
-        // set entry's old left child's right child's parent be entry
-        entry->left->parent = entry;
+        pivot->left->parent = pivot;
     }
-    // 3) entry's old left child's parent is entry's parent
-    // i.e. entry's old left child and entry now share the same parent
-    lc_entry->parent = entry->parent;
 
-    // 4a) if their parent exists check whether entry is
+    // 3) pivot's old left child's parent is pivot's parent
+    // i.e. pivot's old left child and pivot now share the same parent
+    lc_pivot->parent = pivot->parent;
+
+    // 4a) if their parent exists check whether pivot is
     // its parent's left or right child
-    if (entry->parent)
+    if (pivot->parent)
     {
-        if (entry == entry->parent->left)
+        if (pivot == pivot->parent->left)
         {
-            // 4aa) if entry is a left child
-            entry->parent->left = lc_entry;
-            // set the entry's parent's left child
+            // 4aa) if pivot is a left child
+            pivot->parent->left = lc_pivot;
+            // set the pivot's parent's left child
             // to be parent's grandchild instead
-            // (entry's old left child)
+            // (pivot's old left child)
         }
         else
         {
-            // 4ab) if entry is a right child
-            entry->parent->right = lc_entry;
-            // set the entry's parent's right child
+            // 4ab) if pivot is a right child
+            pivot->parent->right = lc_pivot;
+            // set the pivot's parent's right child
             // to be parent's grandchild instead
-            // (entry's old right child)
+            // (pivot's old right child)
         }
     }
     // 4b) if their parent does not exist (their parent is a nullptr)
-    // set the root to be entry's old left child
-    else if (!entry->parent)
+    // that means pivot's parent (and rc pivot) is the root
+    // set the root to be pivot's old left child
+    else if (!pivot->parent)
     {
-        r = lc_entry;
+        r = lc_pivot;
     }
 
-    // 5) set entry's old right child's new left child to be entry
-    // instead of being its old left child (which is now entry's
+    // 5) set pivot's old right child's new left child to be pivot
+    // instead of being its old left child (which is now pivot's
     // right child)
-    lc_entry->right = entry;
-    // 6) set entry's parent be entry's old right child
-    entry->parent = lc_entry;
+    lc_pivot->right = pivot;
+    // 6) set pivot's parent be pivot's old right child
+    pivot->parent = lc_pivot;
 
     return;
 }
