@@ -23,6 +23,7 @@ int main(int argc, char *argv[])
     while (true)
     {
         std::cout << "Select what action you would like to do:" << std::endl;
+        std::cout << "[0] Exact query" << std::endl;
         std::cout << "[1] Friendship query" << std::endl;
         std::cout << "[2] Range query" << std::endl;
         std::cout << "[3] Add user" << std::endl;
@@ -32,6 +33,16 @@ int main(int argc, char *argv[])
         std::cout << "[7] Quit" << std::endl;
         std::cout << "Enter your Selection: ";
         std::getline(std::cin, input1);
+
+        if (input1 == "0")
+        {
+            std::cout << std::endl
+                      << "Enter name: ";
+            std::getline(std::cin, input1);
+            std::cout << std::endl;
+            rbgraph.exact_query(input1);
+            continue;
+        }
         if (input1 == "1")
         {
             std::cout << std::endl
@@ -92,6 +103,12 @@ int main(int argc, char *argv[])
         if (input1 == "7")
             break;
     }
+    
+    // clears the contents of directory.txt
+    // std::ofstream ofs;
+    // ofs.open("directory.txt", std::ofstream::out | std::ofstream::trunc);
+    // ofs.clear();
+    // ofs.close();
 
     return 0;
 }
