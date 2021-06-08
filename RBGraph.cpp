@@ -509,7 +509,7 @@ rbnode *RBGraph::successor(const std::string &name) const
         if (current->right)
         {
             current = current->right;
-            while (current->left != nullptr)
+            while (current->left)
             {
                 current = current->left;
             }
@@ -562,7 +562,7 @@ rbnode *RBGraph::predecessor(const std::string &name) const
         if (current->left)
         {
             current = current->left;
-            while (current->right != nullptr)
+            while (current->right)
             {
                 current = current->right;
             }
@@ -631,9 +631,9 @@ rbnode *RBGraph::binsert(rbnode *r, rbnode *entry)
 /* CALLED BY INSERT: MAINTAINS RBGraph PROPERTIES */
 void RBGraph::fix(rbnode *&r, rbnode *&entry)
 {
-    rbnode *pt_entry = nullptr;  // entry's parent
-    rbnode *uc_entry = nullptr;  // entry's uncle
-    rbnode *gpt_entry = nullptr; // entry's grandparent
+    rbnode *pt_entry;  // entry's parent
+    rbnode *uc_entry;  // entry's uncle
+    rbnode *gpt_entry; // entry's grandparent
 
     // the following loop runs until:
     // 1. entry is root
@@ -736,17 +736,22 @@ void RBGraph::lrotate(rbnode *&r, rbnode *&pivot)
         pivot->right->parent = pivot;
     }
 
-    // 3) pivot's old right child's parent is pivot's parent
+    // 3) set pivot's old right child's new left child to be pivot
+    // instead of being its old left child (which is now pivot's
+    // right child)
+    rc_pivot->left = pivot;
+
+    // 4) pivot's old right child's parent is pivot's parent
     // i.e. pivot's old right child and pivot now share the same parent
     rc_pivot->parent = pivot->parent;
 
-    // 4a) if their parent exists check whether pivot is
+    // 5a) if their parent exists check whether pivot is
     // its parent's left or right child
     if (pivot->parent)
     {
         if (pivot == pivot->parent->left)
         {
-            // 4aa) if pivot is a left child
+            // 5aa) if pivot is a left child
             pivot->parent->left = rc_pivot;
             // set the pivot's parent's left child
             // to be parent's grandchild instead
@@ -754,14 +759,14 @@ void RBGraph::lrotate(rbnode *&r, rbnode *&pivot)
         }
         else
         {
-            // 4ab) if pivot is a right child
+            // 5ab) if pivot is a right child
             pivot->parent->right = rc_pivot;
             // set the pivot's parent's right child
             // to be parent's grandchild instead
             // (pivot's old right child)
         }
     }
-    // 4b) if their parent does not exist (their parent is a nullptr)
+    // 5b) if their parent does not exist (their parent is a nullptr)
     // that means pivot's parent (and rc pivot) is the root
     // set the root to be pivot's old right child
     else if (!pivot->parent)
@@ -769,10 +774,6 @@ void RBGraph::lrotate(rbnode *&r, rbnode *&pivot)
         r = rc_pivot;
     }
 
-    // 5) set pivot's old right child's new left child to be pivot
-    // instead of being its old left child (which is now pivot's
-    // right child)
-    rc_pivot->left = pivot;
     // 6) set pivot's parent be pivot's old right child
     pivot->parent = rc_pivot;
 
@@ -795,17 +796,22 @@ void RBGraph::rrotate(rbnode *&r, rbnode *&pivot)
         pivot->left->parent = pivot;
     }
 
-    // 3) pivot's old left child's parent is pivot's parent
+    // 3) set pivot's old right child's new left child to be pivot
+    // instead of being its old left child (which is now pivot's
+    // right child)
+    lc_pivot->right = pivot;
+
+    // 4) pivot's old left child's parent is pivot's parent
     // i.e. pivot's old left child and pivot now share the same parent
     lc_pivot->parent = pivot->parent;
 
-    // 4a) if their parent exists check whether pivot is
+    // 5a) if their parent exists check whether pivot is
     // its parent's left or right child
     if (pivot->parent)
     {
         if (pivot == pivot->parent->left)
         {
-            // 4aa) if pivot is a left child
+            // 5aa) if pivot is a left child
             pivot->parent->left = lc_pivot;
             // set the pivot's parent's left child
             // to be parent's grandchild instead
@@ -813,14 +819,14 @@ void RBGraph::rrotate(rbnode *&r, rbnode *&pivot)
         }
         else
         {
-            // 4ab) if pivot is a right child
+            // 5ab) if pivot is a right child
             pivot->parent->right = lc_pivot;
             // set the pivot's parent's right child
             // to be parent's grandchild instead
             // (pivot's old right child)
         }
     }
-    // 4b) if their parent does not exist (their parent is a nullptr)
+    // 5b) if their parent does not exist (their parent is a nullptr)
     // that means pivot's parent (and rc pivot) is the root
     // set the root to be pivot's old left child
     else if (!pivot->parent)
@@ -828,10 +834,6 @@ void RBGraph::rrotate(rbnode *&r, rbnode *&pivot)
         r = lc_pivot;
     }
 
-    // 5) set pivot's old right child's new left child to be pivot
-    // instead of being its old left child (which is now pivot's
-    // right child)
-    lc_pivot->right = pivot;
     // 6) set pivot's parent be pivot's old right child
     pivot->parent = lc_pivot;
 
