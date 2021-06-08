@@ -24,7 +24,7 @@
  * binsert() :609
  * fix() :632
  * lrotate() :724
- * rrotate() :782 */
+ * rrotate() :785 */
 
 /* CONSTRUCTOR */
 RBGraph::RBGraph()
@@ -686,8 +686,8 @@ void RBGraph::fix(rbnode *&r, rbnode *&entry)
                 {
                     // rotate left with pivot = parent
                     lrotate(r, pt_entry);
-                    entry = pt_entry; // hi, im not sure why i needed this
-                                      // but without it this DS has segfaults
+                    entry = pt_entry; // after a rotation, the r node 
+                                      // moves and must be reset
                     pt_entry = entry->parent;
                 }
                 // rotate right with pivot = grandparent
@@ -766,6 +766,7 @@ void RBGraph::lrotate(rbnode *&r, rbnode *&pivot)
             // (pivot's old right child)
         }
     }
+
     // 5b) if their parent does not exist (their parent is a nullptr)
     // that means pivot's parent (and rc pivot) is the root
     // set the root to be pivot's old right child
@@ -826,6 +827,7 @@ void RBGraph::rrotate(rbnode *&r, rbnode *&pivot)
             // (pivot's old right child)
         }
     }
+
     // 5b) if their parent does not exist (their parent is a nullptr)
     // that means pivot's parent (and rc pivot) is the root
     // set the root to be pivot's old left child
