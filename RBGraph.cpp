@@ -185,7 +185,7 @@ void RBGraph::insert(const std::string &s)
         {
             if (i == s.length() - 1)
             {
-                if (s[i] != '"')
+                if (s[i] != '"' && s[i] != ',')
                     word += s[i];
             }
             if (counter == 0)
